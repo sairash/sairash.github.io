@@ -1,307 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Home</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sairash</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+		body{
+			padding: 0;
+			margin: 0;
+			background-color: #0f0e0e;
+			color: whitesmoke;
+			width: 100%;
+			font-family: 'Roboto', sans-serif;
+		}
+		.main{
+			display: flex;
+			justify-content: center;
+			cursor: pointer !important;
+		}
+		#notification {
+			position: absolute;
+			top: 20px;
+			padding: 10px;
+			background-color: rgba(0,0,0,0.54);
+			color: #fff;
+			text-align: center;
+			display: inline-block;
+			transform: translateX(-200px);
+			transition: transform .5s;
+			font-size: 20px;
+		}
+
+		#notification.show {
+			transform: translateX(0px);
+		}
+	</style>
 </head>
-<!-- ePgGMWlqF7    1sgJWjR84K  alyssa quinn  -->
 <body>
-    <style type="text/css">
-    @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
-    *{
-        padding: 0;
-        margin: 0;
-        font-family: 'Baloo Tammudu 2', cursive;
-    }
-    *::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    *::-webkit-scrollbar-track {
-      background-color: rgba(0, 0, 0, 0.0);
-    }
-    *::-webkit-scrollbar-thumb {
-      background-color: #fff;
-    }
-
-    body{
-        background-color: #0f0f0f;
-    }
-    .backdrop-blur {
-        background-color: rgba(255, 255, 255, .6);
-    }
-
-    .backdrop-black {
-        background-color: rgba(0, 0, 0, .6);
-    }
-
-
-      /* if backdrop support: very transparent and blurred */
-
-    @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
-        .backdrop-black {
-          background-color: rgba(0, 0, 0, 0);
-        }
-        .backdrop-blur {
-          background-color: rgba(255, 255, 255, 0);
-          -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-        }
-    }
-
-
-    .mainContainer{
-        display: flex;
-        overflow: hidden;
-    }
-    /* Left Sidenar */
-
-    .leftSideBar {
-        position: fixed;
-        padding-top: 20px;
-        display: flex;
-        width: 150px;
-        height: calc(100vh - 20px);
-        box-shadow: 0 0.3px 0.7px rgba(0, 0, 0, 0.126), 0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224), 0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
-        z-index: 2;
-        background-color: #000;
-    }
-
-    .logo_container {
-        display: flex;
-        justify-content: center;
-        width: 150px;
-    }
-
-    .logo_container a img {
-        width: 25px;
-    }
-
-    .leftSideBar_Inner {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .leftSideBar_contents a {
-        width: 150px;
-        display: flex;
-        justify-content: center;
-        color: white;
-        text-decoration: none;
-        padding: 10px 0px 10px 0px;
-    }
-
-    .leftSideBar_contents .active {
-        border-right: solid 3px;
-    }
-    /* Left Sidebar Ends */
-
-    .main_data_container{
-        width: 100%;
-        color: white;
-        padding: 10px 0px 10px 155px;
-        display: flex;
-        flex-wrap: wrap;
-
-    }
-    .snip1518 {
-      position: relative;
-      overflow: hidden;
-      margin: 10px;
-      min-width: 250px;
-      max-width: 310px;
-      width: 100%;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      font-size: 16px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-    }
-
-    .snip1518 * {
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-
-    .snip1518 img {
-      max-width: 100%;
-      vertical-align: top;
-      position: relative;
-    }
-
-    .snip1518 figcaption {
-      padding: 10%;
-      padding-bottom: calc(25%);
-      background-color: #000;
-    }
-
-    .snip1518 h3 {
-      text-transform: uppercase;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 24px;
-      margin: 3px 0;
-    }
-
-    .snip1518 h5 {
-      font-weight: 400;
-      margin: 0;
-      text-transform: uppercase;
-      color: #888;
-      letter-spacing: 1px;
-    }
-
-    .snip1518 footer {
-      border-top: 1px solid rgba(0, 0, 0, 0.065);
-      padding: 0 20px;
-      font-size: 13px;
-      line-height: 50px;
-      text-align: left;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-    }
-
-    .snip1518 footer .icons {
-      position: absolute;
-      right: 20px;
-      top: 0;
-    }
-
-    .snip1518 footer .icons > div {
-      display: inline-block;
-      margin-left: 8px;
-    }
-
-    .snip1518 footer .icons i {
-      display: inline-block;
-      margin-right: 5px;
-      font-size: 1em;
-    }
-
-    .snip1518 a {
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      position: absolute;
-      z-index: 1;
-    }
-    </style>
-<div class="mainContainer">
-    <div class="leftSideBar backdrop-blur backdrop-black" id="leftSideBar">
-      <div class="leftSideBar_Inner">
-         <div class="logo_container">
-            <a href="/" class="logo">
-                <svg width="6.6146mm" height="8.4491mm" version="1.1" viewBox="0 0 6.6146 8.4491" xmlns="http://www.w3.org/2000/svg">
-                 <g transform="translate(-69.323 -41.293)" style="mix-blend-mode:normal">
-                  <path d="m69.323 49.742h1.1266v-8.4491h-1.1266z" style="fill:#fff"/>
-                  <path d="m74.811 49.742h1.1266v-8.4491h-1.1266z" style="fill:#fff"/>
-                  <path d="m72.051 46.556h1.1266v-5.2628h-1.1266z" style="fill:#fff"/>
-                 </g>
-                </svg>
-            </a>
-         </div>
-         <div class="leftSideBar_contents color_light">
-            <a href="/" class="active">
-                Projects
-            </a>
-            <a href="/">
-                Blog
-            </a>
-            <a href="/">
-                About
-            </a>
-         </div>
-         <div class="leftSideBar_contents">
-         </div>
-      </div>
-   </div>
-   <div class="main_data_container">
-    <figure class="snip1518">
-      <figcaption>
-        <h5>Food</h5>
-        <h3>Everything has beauty, but not everyone sees it</h3>
-        <footer>
-          <div class="date">October 30, 2015</div>
-          <div class="icons">
-            <div class="views"><i class="ion-eye"></i>2,907</div>
-            <div class="love"><i class="ion-star"></i>623</div>
-          </div>
-        </footer>
-      </figcaption>
-      <a href="#"></a>
-    </figure>
-    <figure class="snip1518">
-      <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
-      <figcaption>
-        <h5>Food</h5>
-        <h3>Everything has beauty, but not everyone sees it</h3>
-        <footer>
-          <div class="date">October 30, 2015</div>
-          <div class="icons">
-            <div class="views"><i class="ion-eye"></i>2,907</div>
-            <div class="love"><i class="ion-star"></i>623</div>
-          </div>
-        </footer>
-      </figcaption>
-      <a href="#"></a>
-    </figure>
-    <figure class="snip1518">
-      <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
-      <figcaption>
-        <h5>Food</h5>
-        <h3>Everything has beauty, but not everyone sees it</h3>
-        <footer>
-          <div class="date">October 30, 2015</div>
-          <div class="icons">
-            <div class="views"><i class="ion-eye"></i>2,907</div>
-            <div class="love"><i class="ion-star"></i>623</div>
-          </div>
-        </footer>
-      </figcaption>
-      <a href="#"></a>
-    </figure>
-    <figure class="snip1518">
-      <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
-      <figcaption>
-        <h5>Food</h5>
-        <h3>Everything has beauty, but not everyone sees it</h3>
-        <footer>
-          <div class="date">October 30, 2015</div>
-          <div class="icons">
-            <div class="views"><i class="ion-eye"></i>2,907</div>
-            <div class="love"><i class="ion-star"></i>623</div>
-          </div>
-        </footer>
-      </figcaption>
-      <a href="#"></a>
-    </figure>
-    <figure class="snip1518">
-      <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
-      <figcaption>
-        <h5>Food</h5>
-        <h3>Everything has beauty, but not everyone sees it</h3>
-        <footer>
-          <div class="date">October 30, 2015</div>
-          <div class="icons">
-            <div class="views"><i class="ion-eye"></i>2,907</div>
-            <div class="love"><i class="ion-star"></i>623</div>
-          </div>
-        </footer>
-      </figcaption>
-      <a href="#"></a>
-    </figure>
-    
-   </div>
-</div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
-    
-</script>
+	<div class="main">
+		<div onmouseenter="hover('enter')" onmouseleave="hover('exit')">
+			<p>Dope Website</p>
+			<h1>Coming Soon</h1>
+			<p>Probably in:</p>
+			<h1 id="timer"></h1>
+		</div>
+	</div>
+	<div id="notification">
+	  Hopefully!!
+	</div>
 </body>
+<script>
+	var countDownDate = new Date("March 11, 2022 15:37:25").getTime();
+
+	var x = setInterval(function() {
+
+		var now = new Date().getTime();
+
+		var distance = countDownDate - now;
+
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("timer").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+
+	function hover(event) {
+		if(event == "enter"){
+			document.getElementById("notification").classList.add("show");
+		}else{
+			document.getElementById("notification").classList.remove("show");
+		}
+	}
+</script>
+
 </html>
