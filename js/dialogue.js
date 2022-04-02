@@ -11,7 +11,7 @@ var uiDialogueContainer = document.getElementById('uiDialogueContainer');
 var dialogue = {
     carrot:{
         img:'/images/characters/carrot_head.png',
-        speech:['Hello!! Welcome..', 'I am Carrot or the main character of this game!', "Do You See the music button on top? (Click that right now)", "This game happens to be Sairash's Protfolio", "Oh and Did you know everything in this site is made using vanilla js with everything made by sairash except music.", 'Now, Go and Talk to the pigman..'],
+        speech:['Hello!! Welcome..', 'I am Carrot or the main character of this game!', "Do You See the music button on top? (Click that right now)", "This game happens to be Sairash's Portfolio", "Oh and Did you know everything in this site is made using vanilla js with everything made by sairash except music.", 'Now, Go and Talk to the pigman..'],
         intext: 0,
         quest:{
           
