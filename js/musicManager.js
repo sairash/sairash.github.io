@@ -19,7 +19,17 @@ walking_audio.volume = 0.6;
 function play_audio(){
     audio_playing = !audio_playing
     change_gui()
-    background_audio()
+    
+    if(play_audio){
+        background_audio()
+    }
+    else{
+        speaking_sound()
+        event_sound()
+        event_sound()
+        walking_sound()
+    }
+
 }
 
 function change_gui(){

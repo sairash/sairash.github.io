@@ -93,7 +93,7 @@ function dialogueSystem() {
                 speaking = false;
             }
             document.getElementById('speakerIamge').src = dialogue[lastTalkedCharacter].img;
-            document.getElementById('speakerName').innerHTML = lastTalkedCharacter;
+            document.getElementById('speakerName').innerHTML = lastTalkedCharacter+" <small style='color:red;'><i> [Press Space] </i></small>";
         }else{
             if(!postSpeaking){
                 uiDialogueContainer.style.display = 'none';
