@@ -10,11 +10,11 @@ function cursor(e) {
 }
 
 window.addEventListener("mousedown",()=>{
-    mouseCursorImage.src= "/images/cursor_click.png";
+    mouseCursorImage.src= "images/cursor_click.png";
 });
 
 window.addEventListener("mouseup",()=>{
-    mouseCursorImage.src= "/images/cursor.png";
+    mouseCursorImage.src= "images/cursor.png";
 });
 
 document.addEventListener("mouseleave", function(event){

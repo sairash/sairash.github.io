@@ -10,7 +10,7 @@ var uiDialogueContainer = document.getElementById('uiDialogueContainer');
 
 var dialogue = {
     carrot:{
-        img:'/images/characters/carrot_head.png',
+        img:'images/characters/carrot_head.png',
         speech:['Hello!! Welcome..', 'I am Carrot or the main character of this game!', "Do You See the music button on top? (Click that right now)", "This game happens to be Sairash's Portfolio", "Oh and Did you know everything in this site is made using vanilla js with everything made by sairash except music.", 'Now, Go and Talk to the pigman..'],
         intext: 0,
         quest:{
@@ -21,7 +21,7 @@ var dialogue = {
 
     },
     bacon:{
-        img:'/images/characters/bacon_head.png',
+        img:'images/characters/bacon_head.png',
         speech:['Hii Oink Oink!', 'I am bacon.. But You can call me yours ;)', 'I have a quest for you!', 'Go and get me the key from the Chest that is in Shroom Land!', '...', 'Oh Wow you did bring it.. Thank you!'],
         intext: 0,
         quest:{
