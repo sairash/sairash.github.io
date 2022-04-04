@@ -38,6 +38,31 @@
 						<div for="tree" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * 1.4); position: absolute; top: calc(var(--tile) * 31.8); left: calc(var(--tile) * 37.3);"></div>
 						<div for="anchor" style="width: calc(var(--tile) * .6); height: calc(var(--tile) * .6); position: absolute; top: calc(var(--tile) * 31.5); left: calc(var(--tile) * 39);"></div>
 
+						<!-- Podium -->
+						<div for="Podium_top" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * .7); position: absolute; top: calc(var(--tile) * 24.1); left: calc(var(--tile) * 12.8);"></div>
+						<div for="Podium" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * .7); position: absolute; top: calc(var(--tile) * 27); left: calc(var(--tile) * 13);"></div>
+						<div for="Podium" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * .7); position: absolute; top: calc(var(--tile) * 29.4); left: calc(var(--tile) * 13);"></div>
+						<div for="Podium" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * .7); position: absolute; top: calc(var(--tile) * 32); left: calc(var(--tile) * 12.9);"></div>
+						<div for="Podium_bottom" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * .9); position: absolute; top: calc(var(--tile) * 34.3); left: calc(var(--tile) * 13);"></div>
+
+						<!-- Skill Land Tree -->
+						<div for="tree" style="width: calc(var(--tile) * 4.6); height: calc(var(--tile) * 10); position: absolute; top: calc(var(--tile) * 25.8); left: calc(var(--tile) * 1.5);"></div>
+						<div for="tree" style="width: calc(var(--tile) * .6); height: calc(var(--tile) * 7.8); position: absolute; top: calc(var(--tile) * 27.1); left: calc(var(--tile) * 6.1);"></div>
+						<div for="tree" style="width: calc(var(--tile) * 1.6); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 33.7); left: calc(var(--tile) * 6.7);"></div>
+						<div for="tree" style="width: calc(var(--tile) * 1.1); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 34.1); left: calc(var(--tile) * 8.3);"></div>
+						<div for="tree" style="width: calc(var(--tile) * .3); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 35.2); left: calc(var(--tile) * 9.4);"></div>
+
+						
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 7); height: calc(var(--tile) * 1); position: absolute; top: calc(var(--tile) * 37); left: calc(var(--tile) * 9.7);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 2.3); height: calc(var(--tile) * 2); position: absolute; top: calc(var(--tile) * 35); left: calc(var(--tile) * 13.8);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 1); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 32.5); left: calc(var(--tile) * 16.2);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 1.5); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 24.3); left: calc(var(--tile) * 15.5);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 5.6); height: calc(var(--tile) * 2); position: absolute; top: calc(var(--tile) * 22); left: calc(var(--tile) * 1);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 7); height: calc(var(--tile) * 1); position: absolute; top: calc(var(--tile) * 21); left: calc(var(--tile) * 6.8);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 7.2); height: calc(var(--tile) * 2); position: absolute; top: calc(var(--tile) * 22); left: calc(var(--tile) * 13.8);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 2); height: calc(var(--tile) * 2); position: absolute; top: calc(var(--tile) * 23.7); left: calc(var(--tile) * 2.2);"></div>
+
+
 
 						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 4); height: calc(var(--tile) * 4.7); position: absolute; top: calc(var(--tile) * 24.2); left: calc(var(--tile) * 17.4);"></div>
 						<div for="sea_wall_left_mid_bottom" style="width: calc(var(--tile) * 4); height: calc(var(--tile) * 4.7); position: absolute; top: calc(var(--tile) * 30.7); left: calc(var(--tile) * 17.4);"></div>
@@ -131,10 +156,10 @@
 	var map = document.querySelector("#world-map");
 
 	//start in the custom postion of the map
+	var x = 219;
+	var y = 394;
 	// var x = 474;
-	// var y = 384;
-	var x = 474;
-	var y = 334;
+	// var y = 334;
 	var held_directions = []; //State of which arrow keys we are holding down
 	var speed = 1; //How fast the player moves in pixels per frame
 	var facingLeft = false;

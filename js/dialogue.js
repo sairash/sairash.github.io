@@ -8,6 +8,9 @@ var questActive= false;
 var speakerDialogueHtml = document.getElementById('speakerDialogue');
 var uiDialogueContainer = document.getElementById('uiDialogueContainer');
 
+var o = 0;
+
+
 var dialogue = {
     carrot:{
         img:'images/characters/carrot_head.png',
@@ -34,6 +37,15 @@ var dialogue = {
         placeholder: '...!',
 
     },
+}
+
+
+function typing() {
+    if(o < currentText.length){
+        speakerDialogueHtml.innerHTML += currentText.charAt(o);
+        o++;
+        setTimeout(typing, 50);
+    }
 }
 
 
@@ -72,7 +84,9 @@ function dialogueSystem() {
                 if(dialogue[lastTalkedCharacter].quest[dialogue[lastTalkedCharacter].intext] != undefined){
                     if(currentText != dialogue[lastTalkedCharacter].speech[dialogue[lastTalkedCharacter].intext]){
                         currentText = dialogue[lastTalkedCharacter].speech[dialogue[lastTalkedCharacter].intext];
-                        speakerDialogueHtml.innerHTML = currentText;
+                        speakerDialogueHtml.innerHTML = '';
+                        o = 0;
+                        typing();
                     }
                     if(dialogue[lastTalkedCharacter].quest[dialogue[lastTalkedCharacter].intext].locked){
                         console.log("Quest Active: True");
@@ -83,13 +97,18 @@ function dialogueSystem() {
                 }else{
                     if(currentText != dialogue[lastTalkedCharacter].speech[dialogue[lastTalkedCharacter].intext]){
                         currentText = dialogue[lastTalkedCharacter].speech[dialogue[lastTalkedCharacter].intext];
-                        speakerDialogueHtml.innerHTML = currentText;
+                        speakerDialogueHtml.innerHTML = '';
+                        o = 0;
+                        typing();
                     }
                 }
 
             }else{
-                speakerDialogueHtml.innerHTML = dialogue[lastTalkedCharacter].placeholder;
-                console.log('speaking: '+speaking)
+                currentText = dialogue[lastTalkedCharacter].placeholder;
+                // speakerDialogueHtml.innerHTML = dialogue[lastTalkedCharacter].placeholder;
+                speakerDialogueHtml.innerHTML = '';
+                o = 0;
+                typing();
                 speaking = false;
             }
             document.getElementById('speakerIamge').src = dialogue[lastTalkedCharacter].img;

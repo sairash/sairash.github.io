@@ -107,8 +107,9 @@ body{
     position: relative;
 }
 
-/* #environment div{
+ /* #environment div{
     background-color: rgba(255, 0, 0, 0.5);
+    
 }
 
 #environment span{
@@ -117,7 +118,7 @@ body{
 
 #environment p{
     background-color: rgba(0, 0, 255, 0.5);
-} */
+}  */
 
 .npc{
     width: calc( var(--tile)* 2 );
