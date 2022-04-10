@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Pizza</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+	  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" integrity="sha512-K9tDZvc8nQXR1DMuT97sct9f40dilGp97vx7EXjswJA+/mKqJZ8vcZLifZDP+9t08osMLuiIjd4jZ0SM011Q+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Abel&family=Grand+Hotel&family=Holtwood+One+SC&display=swap');
+      :root {
+        --delay: 0;
+        --duration: 800ms;
+        --iterations: 1;
+      }
+      .font_bold{
+        font-family: 'Holtwood One SC', serif;
+      }
+      .font_cursive{
+        font-family: 'Grand Hotel', cursive;
+      }
+      body{
+        font-family: 'Abel', sans-serif;
+        background-color: black;
+        color: white;
+        overflow-x: hidden;
+      }
+      .arrow,
+      .arrow:before {
+        position: absolute;
+        left: 50%;
+      }
+
+      .arrow {
+        width: 20px;
+        height: 20px;
+        bottom: 20px;
+        margin: -20px 0 0 -20px;
+        -webkit-transform: rotate(45deg);
+        border-left: none;
+        border-top: none;
+        border-right: 2px #fff solid;
+        border-bottom: 2px #fff solid;
+      }
+
+      .arrow:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        margin: -10px 0 0 -10px;
+        border-left: none;
+        border-top: none;
+        border-right: 1px #fff solid;
+        border-bottom: 1px #fff solid;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: arrow;
+      }
+
+      @keyframes arrow {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-10px, -10px);
+        }
+      }
+      .myheader{
+        opacity: 0;
+        top: -1px;
+      }
+      .side_info_bar{
+        top:-1px;
+      }
+      /* styles for when the header is in sticky mode */
+      .text_white{
+        transition: opacity 1s;  
+        opacity: 1;
+        color: #fff;
+      }
+      .reveal-text,
+      .reveal-text::after {
+        -webkit-animation-delay: var(--animation-delay, 2s);
+                animation-delay: var(--animation-delay, 2s);
+        -webkit-animation-iteration-count: var(--iterations, 1);
+                animation-iteration-count: var(--iterations, 1);
+        -webkit-animation-duration: var(--duration, 800ms);
+                animation-duration: var(--duration, 800ms);
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+                animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+      }
+
+      .reveal-text {
+        --animation-delay: var(--delay, 0);
+        --animation-duration: var(--duration, 800ms);
+        --animation-iterations: var(--iterations, 1);
+        position: relative;
+        -webkit-animation-name: clip-text;
+                animation-name: clip-text;
+        color: #FFF;
+        white-space: nowrap;
+        cursor: default;
+      }
+
+      .reveal-text::after {
+          content: "";
+          position: absolute;
+          z-index: 999;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #fff;
+          transform: scaleX(0);
+          transform-origin: 0 50%;
+          pointer-events: none;
+          -webkit-animation-name: text-revealer;
+                  animation-name: text-revealer;
+        }
+
+
+      @-webkit-keyframes clip-text {
+        from {
+          -webkit-clip-path: inset(0 100% 0 0);
+                  clip-path: inset(0 100% 0 0);
+        }
+        to {
+          -webkit-clip-path: inset(0 0 0 0);
+                  clip-path: inset(0 0 0 0);
+        }
+      }
+
+
+      @keyframes clip-text {
+        from {
+          -webkit-clip-path: inset(0 100% 0 0);
+                  clip-path: inset(0 100% 0 0);
+        }
+        to {
+          -webkit-clip-path: inset(0 0 0 0);
+                  clip-path: inset(0 0 0 0);
+        }
+      }
+
+
+      @-webkit-keyframes text-revealer {
+        
+        0%, 50% {
+          transform-origin: 0 50%;
+        }
+        
+        60%, 100% {
+          transform-origin: 100% 50%;		
+        }
+
+        
+        60% {
+          transform: scaleX(1);
+        }
+        
+        100% {
+          transform: scaleX(0);
+        }
+      }
+
+
+      @keyframes text-revealer {
+        
+        0%, 50% {
+          transform-origin: 0 50%;
+        }
+        
+        60%, 100% {
+          transform-origin: 100% 50%;		
+        }
+
+        
+        60% {
+          transform: scaleX(1);
+        }
+        
+        100% {
+          transform: scaleX(0);
+        }
+      }
+     
+    </style>
+  </head>
+  
+  <body>
+    <div class="h-screen w-screen flex justify-center first-section">
+      <div class="flex flex-col justify-center h-100 big">
+        <div class=" text-4xl font_bold " >Sairash Gautam</div>
+        <div class="text-3xl font_cursive main_title absolute" style="left: 50%; top: 57%; transform: translate(-50%, -50%); opacity: 1;">Full Stack and Design</div>
+      </div>
+      <div class="arrow"></div>
+    </div>
+    <div class="flex justify-center text-lg font_bold w-full sticky z-50 bg-black myheader">Sairash Gautam</div>
+      <div class="h-screen w-screen flex justify-center second-section">
+        <img src="https://i.ibb.co/VS7Nq7L/IMG-20220214-221300-793.jpg" class="w-40 rounded-3xl myFace_xD absolute top-20" style="left: 50%; transform: translate(-50%, 0px);">
+        <div class="absolute top-86 mt-80">
+        <div class="text-2xl font_bold w-full text-center">About me</div>
+        <div class="w-96 text-center">A creative Fullstack Developer but feels at home in frontend who cares deeply about the user experience. Serious passion for new tech and good communicator.</div>
+      </div>
+    </div>
+    <div class="h-screen w-screen flex justify-center third-section">
+      <div class="flex flex-col justify-center h-100 big">
+        <div id="canvas" class="w-100 h-100"></div>
+      </div>
+    </div>
+    <div class="">
+      <div class="sticky side_info_bar">
+        <div class="tex-black text-xl font_bold w-10 p-2 relative top-10 left-3" id="number_1">
+          
+        </div>
+        <div class="tex-black text-2xl font_bold w-72 p-2 relative top-32 left-10" id="title_1">
+          
+        </div>
+        <div class="tex-black text-xl font-bolder w-72 p-2 relative top-28 left-10" id="work_done_1">
+          
+        </div>
+        <div class="tex-black text-2xl font-bolder p-2 relative top-32 left-10" id="disc_1" style="width: 400px;">
+          
+        </div>
+      </div>
+      <div class="h-screen w-screen fourth-section perspective">
+        <div class="h-44"></div>
+        <a href="https://meltdwn.herokuapp.com" target="_blank" rel="noopener noreferrer">
+          <img src="img/my/meltdown_big_front.png" class="w-96 big_screen absolute right-4 rounded-xl card  js-tilt shadow-lg shadow-white/50" style="opacity: 1;">
+          <img src="img/my/meltdown_mobile_view.png" class="h-96 small_screen absolute rounded-xl card js-tilt shadow-lg shadow-white/50" style="right: 400px; opacity: 1;">
+        </a>
+      </div>
+      <div class="h-screen w-screen fifth-section">
+        <div class="h-44"></div>
+        <a href="https://github.com/sairash/Meltdown" target="_blank" rel="noopener noreferrer"><img src="img/my/melt1.png" class="w-96 big_screen_2 absolute right-4 rounded-xl js-tilt shadow-lg shadow-white/50" style="opacity: 1; width: 600px;">  </a>
+      </div>
+      <div class="h-screen w-screen sixth-section">
+        <div class="h-44"></div>
+        <a href="https://sairash.github.io/" target="_blank" rel="noopener noreferrer"><img src="img/my/interactive_portfolio.png" class="big_screen_3 absolute right-4 rounded-xl js-tilt shadow-lg shadow-white/50" style="opacity: 1; width: 600px;"></a>
+      </div>
+      <div class="h-screen w-screen seventh-section">
+        <div class="h-44"></div>
+        <a href="https://github.com/sairash/Medinoor" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/sairash/Medinoor/main/Medinoor/public/img/screenshots/search-doctors-by-body.PNG" class="big_screen_4 absolute right-4 rounded-xl js-tilt shadow-lg shadow-white/50" style="opacity: 1; width: 600px;"></a>
+      </div>
+      <div class="h-screen w-screen eight-section">
+        <div class="h-44"></div>
+        <a href="https://github.com/sairash/Patra" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/sairash/Patra/main/screenshots/patra_homepage.png" class="big_screen_5 absolute right-4 rounded-xl js-tilt shadow-lg shadow-white/50" style="opacity: 1; width: 600px;"></a>
+      </div>
+    </div>
+    <div class="h-screen w-screen ninth-section flex justify-between">
+      <div class="pt-20 flex justify-center w-full h-full border-r-2">
+        <div class="text-2xl w-96">
+          <div class="w-full flex justify-center font_bold pb-4">
+            Contact Form
+            
+          </div>
+          <div class="w-full py-2 flex justify-center">
+            <input type="text" id="sender_subject" placeholder="Subject" class="w-80 h-10 text-black rounded-md">  
+          </div>
+          <div class="w-full py-2 flex justify-center">
+            <input type="email" id="sender_email" placeholder="Email" class="w-80 h-10 text-black rounded-md">  
+          </div>
+          <div class="w-full py-2 flex justify-center">
+            <textarea type="text" id="sender_text" class="w-80 text-black rounded-md">  </textarea>
+          </div>
+          <div class="w-full py-2 flex justify-center">
+            <button class="w-80 h-10 text-black rounded-md bg-white text-center hover:bg-gray-800 hover:text-white" onclick="sendEmail()">Submit</button>
+          </div>
+        </div>
+      </div>
+      <div class="pt-20 flex justify-center w-full h-full border-r-2">
+        <div class="text-2xl w-96">
+          <div class="w-full flex justify-center font_bold pb-4">
+            Contact Link
+          </div>
+          <div class="w-full text-center">
+            <a href="mailto:gautamsairash@gmail.com" class="text-2xl">gautamsairash@gmail.com</a>
+          </div>
+          <div class="w-full text-center mt-2">
+            <a href="https://www.instagram.com/cyrus.gautam">
+              Instagram
+            </a>
+          </div>
+          <div class="w-full text-center mt-2">
+            <a href="https://www.facebook.com/cyrus.gautam9">
+              Facebook
+            </a>
+          </div>
+          <div class="w-full text-center mt-2">
+            <a href="https://www.github.com/sairash">
+              Github
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <section class="second-section">
+      <h1>Draw AttentioContact formn Where You Want it Most</h1>
+      <p>A great animation effect is impossible to ignore.</p>
+      <div class="images-wrapper bottom">
+        <div class="image-container">
+          <img class="section_2_06" src="img/section_2_06.webp" />
+        </div>
+        <div class="image-container">
+          <img class="section_2_07" src="img/section_2_07.webp" />
+        </div>
+        <div class="image-container">
+          <img class="section_2_08" src="img/section_2_08.webp" />
+        </div>
+        <div class="image-container">
+          <img class="section_2_09" src="img/section_2_09.webp" />
+        </div>
+        <div class="image-container">
+          <img class="section_2_10" src="img/section_2_10.webp" />
+        </div>
+      </div>
+      <div class="images-wrapper top">
+        <div class="image-container">
+          <img class="section_2_01" src="img/section_2_01.webp" />
+        </div>
+        <div class="image-container">
+          <img class="section_2_02" src="img/section_2_02.webp" />
+        </div>
+        <div class="image-container">
+          <img class="section_2_03" src="img/section_2_03.webp" />
+        </div>
+        <div class="image-container">
+          <img class="section_2_04" src="img/section_2_04.webp" />
+        </div>
+        <div class="image-container">
+          <img class="section_2_05" src="img/section_2_05.webp" />
+        </div>
+      </div>
+    </section>
+    <section class="third-section">
+      <h1>Animate Anything You Want</h1>
+      <p>Easily add animation to text, photos, buttons & more.</p>
+      <div class="images-wrapper">
+        <img class="section_3_06" src="img/section_3_06.webp" />
+        <img class="section_3_05" src="img/section_3_05.webp" />
+        <img class="section_3_04" src="img/section_3_04.webp" />
+        <img class="section_3_03" src="img/section_3_03.webp" />
+        <img class="section_3_02" src="img/section_3_02.webp" />
+        <img class="section_3_01" src="img/section_3_01.webp" />
+      </div>
+    </section>
+    <section class="forth-section">
+      <h1>14 Types of Animation</h1>
+      <p>With so many different effects, the possibilities are endless.</p>
+      <div class="images-wrapper">
+        <img class="section_4_01" src="img/section_4_01.webp" />
+        <img class="section_4_02" src="img/section_4_02.webp" />
+        <img class="section_4_03" src="img/section_4_03.webp" />
+        <img class="section_4_04" src="img/section_4_04.webp" />
+      </div>
+    </section> -->
+    <script defer>
+      const el = document.querySelector(".myheader")
+      const observer = new IntersectionObserver( 
+        ([e]) => e.target.classList.toggle("text_white", e.intersectionRatio < 1),
+        { threshold: [1] }
+      );
+      observer.observe(el);
+    </script>
+
+    <script>
+      var canvas = document.getElementById('canvas');
+
+      // install plugin
+      Matter.use(
+        'matter-attractors'
+      );
+
+      // variables
+      var Engine = Matter.Engine,
+          World = Matter.World,
+          Body = Matter.Body,
+          Bodies = Matter.Bodies,
+          Common = Matter.Common,
+          MouseConstraint = Matter.MouseConstraint,
+          Events = Matter.Events,
+          Render = Matter.Render,
+          Mouse = Matter.Mouse,
+          Vertices = Matter.Vertices,
+          height = window.innerHeight,
+          width = window.innerWidth,
+          mobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+          cursor = 'img/skills.png';
+
+      // change cursor image on mobile devices
+      if(mobileDevice) {
+        var cursor = 'img/skills.png';
+      }
+
+      // create engine
+      var engine = Engine.create();
+
+      // create renderer
+      var render = Render.create({
+          element: canvas,
+          engine: engine,
+          options: {
+              wireframes: false,
+              showAngleIndicator: false,
+              background: 'transparent',
+              height: height,
+              width: width
+          }
+      });
+      Render.run(render);
+
+      // create world
+      var world = engine.world;
+      world.gravity.x = 0;
+      world.gravity.y = 0.01;
+      world.bodies = [];
+
+      // create a body with an attractor
+      var attractiveBody = Bodies.circle(width / 2, height / 2, 96, {
+        render: {
+          sprite: {
+            texture: cursor,
+            xScale: .190,
+            yScale: .190
+          }
+        },
+        isStatic: true,
+
+        plugin: {
+          attractors: [
+            function(bodyA, bodyB) {
+              return {
+                x: (bodyA.position.x - bodyB.position.x) * 1e-6,
+                y: (bodyA.position.y - bodyB.position.y) * 1e-6,
+              };
+            }
+          ]
+        }
+      });
+      World.add(world, attractiveBody);
+
+      // randomize starting starting X & Y positions
+      let randomX = Common.random(0, width+width/2),
+          randomY = Common.random(-height/2,height+height/4);
+
+
+          // main bodies
+      var bodies = function () {
+        return [
+          
+          Bodies.circle(randomX, randomY, 50, {
+            density: .000008,
+            frictionAir: 0.006,
+            restitution: 0.3,
+            friction: 0.01,
+            render:{
+              fillStyle:"#C44D58",
+              sprite: {
+                texture: 'img/html.png',
+                xScale: .100,
+                yScale: .100
+              }
+            },
+            }),
+            Bodies.circle(randomX, randomY, 50, {
+            density: .000008,
+            frictionAir: 0.006,
+            restitution: 0.3,
+            friction: 0.001,
+            render:{
+              fillStyle:"#C44D58",
+              sprite: {
+                texture: 'img/vue.png',
+                xScale: .100,
+                yScale: .100
+              }
+            },
+            }),
+            Bodies.circle(randomX, randomY, 50, {
+            density: .000008,
+            frictionAir: 0.006,
+            restitution: 0.3,
+            friction: 0.01,
+            render:{
+              fillStyle:"#C44D58",
+              sprite: {
+                texture: 'img/css.png',
+                xScale: .100,
+                yScale: .100
+              }
+            },
+            }),
+            Bodies.circle(randomX, randomY, 50, {
+            density: .000008,
+            frictionAir: 0.006,
+            restitution: 0.3,
+            friction: 0.001,
+            render:{
+              fillStyle:"#C44D58",
+              sprite: {
+                texture: 'img/js.png',
+                xScale: .100,
+                yScale: .100
+              }
+            },
+            }),
+            Bodies.circle(randomX, randomY, 50, {
+            density: .000008,
+            frictionAir: 0.006,
+            restitution: 0.3,
+            friction: 0.001,
+            render:{
+              fillStyle:"#C44D58",
+              sprite: {
+                texture: 'img/php.png',
+                xScale: .100,
+                yScale: .100
+              }
+            },
+            }),
+            Bodies.circle(randomX, randomY, 50, {
+            density: .000008,
+            frictionAir: 0.006,
+            restitution: 0.3,
+            friction: 0.01,
+            render:{
+              fillStyle:"#C44D58",
+              sprite: {
+                texture: 'img/laravel.png',
+                xScale: .100,
+                yScale: .100
+              }
+            },
+            }),
+            Bodies.circle(randomX, randomY, 50, {
+            density: .000008,
+            frictionAir: 0.006,
+            restitution: 0.3,
+            friction: 0.01,
+            render:{
+              fillStyle:"#C44D58",
+              sprite: {
+                texture: 'img/express.png',
+                xScale: .100,
+                yScale: .100
+              }
+            },
+            }),
+        ]
+      };
+      World.add(world, bodies());
+
+
+      // add mouse control
+      var mouse = Mouse.create(render.canvas);
+
+      // allow page scrolling while on the canvas
+      mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
+      mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
+
+      // smoothly move the attractor body towards the mouse
+      Events.on(engine, 'afterUpdate', function() {
+          if (!mouse.position.x) {
+            return;
+          }
+        Body.translate(attractiveBody, {
+            x: (mouse.position.x - attractiveBody.position.x) * 0.25,
+            y: (mouse.position.y - attractiveBody.position.y) * 0.25
+        });
+      });
+
+      // add mouse constraint
+      var mouseConstraint = MouseConstraint.create(engine, { 
+        mouse: mouse,
+        constraint: {
+            render: {
+                visible: false
+            }
+        }
+       });
+      World.add(world, mouseConstraint);
+
+
+      // resize canvas on browser resize (desktop only)
+      if(!mobileDevice) {
+        window.addEventListener('resize', function () {
+            document.querySelector("#canvas > canvas").setAttribute("height", window.innerHeight);
+            document.querySelector("#canvas > canvas").setAttribute("width", window.innerWidth);
+        });
+      };
+
+      // run the engine
+      Engine.run(engine);
+
+    </script>
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".js-tilt"));
+    </script>
+    <script>
+      function sendEmail() {
+        Email.send({
+          SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
+          To: 'gautamsairash@gmail.com',
+          From: document.getElementById("sender_email").vlue,
+          Subject: document.getElementById("sender_subject").vlue,
+          Body: document.getElementById("sender_text").vlue
+        })
+          .then(function (message) {
+            alert("Mail sent successfully but you should try sending me mail yourself as this service is unpredictable.")
+          });
+      }
+    </script>
+  </body>
+</html>

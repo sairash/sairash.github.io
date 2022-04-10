@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sairash</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body id="root">
+	<div id="cursor">
+		<img src="images/cursor.png" id="cursorImage" draggable="false" style="width: 100%; height: 100%;" class="pixel" />
+	</div>
+	<div>
+		<div class="world pixel">
+			
+			<div class="camera">
+				<div id="world-map" class="pixel">
+					<div id="environment">
+						<div for="welcome_house" style="width: calc(var(--tile) * 6); height: calc(var(--tile) * 4.7); position: absolute; top: calc(var(--tile) * 26.2); left: calc(var(--tile) * 28);"></div>
+						<div for="swelcome_house_ide_garden" style="width: calc(var(--tile) * 2.7); height: calc(var(--tile) * 1.8); position: absolute; top: calc(var(--tile) * 29.1); left: calc(var(--tile) * 25.3);"></div>
+						<div for="log" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * 0.6); position: absolute; top: calc(var(--tile) * 29.7); left: calc(var(--tile) * 24.1);"></div>
+						<div for="tree" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * 1.4); position: absolute; top: calc(var(--tile) * 28); left: calc(var(--tile) * 34.2);"></div>
+						<!-- Top Right Middle Island -->
+						<div for="tree" style="width: calc(var(--tile) * 3); height: calc(var(--tile) * 3.5); position: absolute; top: calc(var(--tile) * 23); left: calc(var(--tile) * 36.2);"></div>
+						<div for="tree" style="width: calc(var(--tile) * 2.2); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 22); left: calc(var(--tile) * 34);"></div>
+						<div for="tree" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * 1.2); position: absolute; top: calc(var(--tile) * 21.2); left: calc(var(--tile) * 33.2);"></div>
+						<!-- Top Left Middle Island -->
+						<div for="tree" style="width: calc(var(--tile) * 3); height: calc(var(--tile) * 3.5); position: absolute; top: calc(var(--tile) * 23.2); left: calc(var(--tile) * 22);"></div>
+						<div for="tree" style="width: calc(var(--tile) * 2.2); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 22); left: calc(var(--tile) * 25);"></div>
+						<div for="tree" style="width: calc(var(--tile) * 1); height: calc(var(--tile) * 2.2); position: absolute; top: calc(var(--tile) * 21.4); left: calc(var(--tile) * 27.2);"></div>
+						<!-- Bottom Left Middle Island -->
+						<div for="tree" style="width: calc(var(--tile) * 1.8); height: calc(var(--tile) * 3.5); position: absolute; top: calc(var(--tile) * 31.5); left: calc(var(--tile) * 21.6);"></div>
+						<div for="tree" style="width: calc(var(--tile) * 4.2); height: calc(var(--tile) * 5.5); position: absolute; top: calc(var(--tile) * 33.5); left: calc(var(--tile) * 23.4);"></div>
+
+						<!-- Bottom Right Middle Island -->
+						<div for="tree" style="width: calc(var(--tile) * 4); height: calc(var(--tile) * 5); position: absolute; top: calc(var(--tile) * 34.2); left: calc(var(--tile) * 32.6);"></div>
+						<div for="tree" style="width: calc(var(--tile) * 5); height: calc(var(--tile) * .4); position: absolute; top: calc(var(--tile) * 33.8); left: calc(var(--tile) * 34.2);"></div>
+						<div for="tree" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * 1.4); position: absolute; top: calc(var(--tile) * 31.8); left: calc(var(--tile) * 37.3);"></div>
+						<div for="anchor" style="width: calc(var(--tile) * .6); height: calc(var(--tile) * .6); position: absolute; top: calc(var(--tile) * 31.5); left: calc(var(--tile) * 39);"></div>
+
+						<!-- Podium -->
+						<div for="Podium_top" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * .7); position: absolute; top: calc(var(--tile) * 24.1); left: calc(var(--tile) * 12.8);"></div>
+						<div for="Podium" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * .7); position: absolute; top: calc(var(--tile) * 27); left: calc(var(--tile) * 13);"></div>
+						<div for="Podium" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * .7); position: absolute; top: calc(var(--tile) * 29.4); left: calc(var(--tile) * 13);"></div>
+						<div for="Podium" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * .7); position: absolute; top: calc(var(--tile) * 32); left: calc(var(--tile) * 12.9);"></div>
+						<div for="Podium_bottom" style="width: calc(var(--tile) * .8); height: calc(var(--tile) * .9); position: absolute; top: calc(var(--tile) * 34.3); left: calc(var(--tile) * 13);"></div>
+
+						<!-- Skill Land Tree -->
+						<div for="tree" style="width: calc(var(--tile) * 4.6); height: calc(var(--tile) * 10); position: absolute; top: calc(var(--tile) * 25.8); left: calc(var(--tile) * 1.5);"></div>
+						<div for="tree" style="width: calc(var(--tile) * .6); height: calc(var(--tile) * 7.8); position: absolute; top: calc(var(--tile) * 27.1); left: calc(var(--tile) * 6.1);"></div>
+						<div for="tree" style="width: calc(var(--tile) * 1.6); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 33.7); left: calc(var(--tile) * 6.7);"></div>
+						<div for="tree" style="width: calc(var(--tile) * 1.1); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 34.1); left: calc(var(--tile) * 8.3);"></div>
+						<div for="tree" style="width: calc(var(--tile) * .3); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 35.2); left: calc(var(--tile) * 9.4);"></div>
+
+						
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 7); height: calc(var(--tile) * 1); position: absolute; top: calc(var(--tile) * 37); left: calc(var(--tile) * 9.7);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 2.3); height: calc(var(--tile) * 2); position: absolute; top: calc(var(--tile) * 35); left: calc(var(--tile) * 13.8);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 1); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 32.5); left: calc(var(--tile) * 16.2);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 1.5); height: calc(var(--tile) * 3); position: absolute; top: calc(var(--tile) * 24.3); left: calc(var(--tile) * 15.5);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 5.6); height: calc(var(--tile) * 2); position: absolute; top: calc(var(--tile) * 22); left: calc(var(--tile) * 1);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 7); height: calc(var(--tile) * 1); position: absolute; top: calc(var(--tile) * 21); left: calc(var(--tile) * 6.8);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 7.2); height: calc(var(--tile) * 2); position: absolute; top: calc(var(--tile) * 22); left: calc(var(--tile) * 13.8);"></div>
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 2); height: calc(var(--tile) * 2); position: absolute; top: calc(var(--tile) * 23.7); left: calc(var(--tile) * 2.2);"></div>
+
+
+
+						<div for="sea_wall_left_mid_top" style="width: calc(var(--tile) * 4); height: calc(var(--tile) * 4.7); position: absolute; top: calc(var(--tile) * 24.2); left: calc(var(--tile) * 17.4);"></div>
+						<div for="sea_wall_left_mid_bottom" style="width: calc(var(--tile) * 4); height: calc(var(--tile) * 4.7); position: absolute; top: calc(var(--tile) * 30.7); left: calc(var(--tile) * 17.4);"></div>
+						<div for="sea_wall_bottom_mid_left" style="width: calc(var(--tile) * 4); height: calc(var(--tile) * 4.7); position: absolute; top: calc(var(--tile) * 39); left: calc(var(--tile) * 25.7);"></div>
+						<div for="sea_wall_bottom_mid_right" style="width: calc(var(--tile) * 4); height: calc(var(--tile) * 4.7); position: absolute; top: calc(var(--tile) * 39); left: calc(var(--tile) * 31.3);"></div>
+						<div for="sea_wall_right_mid_top" style="width: calc(var(--tile) * 4.2); height: calc(var(--tile) * 4.7); position: absolute; top: calc(var(--tile) * 24.2); left: calc(var(--tile) * 39.6);"></div>
+						<div for="sea_wall_right_mid_bottom" style="width: calc(var(--tile) * 4.4); height: calc(var(--tile) * 4.7); position: absolute; top: calc(var(--tile) * 30.7); left: calc(var(--tile) * 39.4);"></div>
+						<div for="sea_wall_bottom_mid_left" style="width: calc(var(--tile) * 4); height: calc(var(--tile) * 4.4); position: absolute; top: calc(var(--tile) * 16.9); left: calc(var(--tile) * 25.7);"></div>
+						<div for="sea_wall_bottom_mid_right" style="width: calc(var(--tile) * 4); height: calc(var(--tile) * 4.4); position: absolute; top: calc(var(--tile) * 16.9); left: calc(var(--tile) * 31.3);"></div>
+
+
+						<span for="door_welcome_house"  style="width: calc(var(--tile) * 1.5); height: calc(var(--tile) * 1.9); position: absolute; top: calc(var(--tile) * 29.15); left: calc(var(--tile) * 31.3);"> <img id="home_door_1_image" style="width: 100%; height: 100%;" src="images/environment/door2_close.png" alt=""><p id="home_door_1" style="position: absolute; width: calc(var(--tile) * 1.5); height: var(--tile); bottom: -70%;" type="changeAble" position= "472,597"></p></span>
+						<span for="npc_bacon" id="bacon" style="position: absolute; top: calc(var(--tile) * 33); left: calc(var(--tile) * 29.8);"> 
+							<span class="npc" style="top: -150%; left: 0;">
+								<div class="npc_collider"></div>
+								<span class="shadow pixel"></span>
+								<span class="npc_spritesheet pixel" style='background: url("images/characters/bacon_right.png") no-repeat no-repeat;background-size: 100%;'></span>
+							</span>
+							<p id="bacon_1" type="npc" class="npc_interact_place_1"></p>
+						</span>
+						<span for="chest" style="width: calc(var(--tile) * 1.1); height: calc(var(--tile) * 1.1); position: absolute; top: calc(var(--tile) * 28); left: calc(var(--tile) * 45);"> 
+							<img id="chest_1_image" style="width: 100%; height: 100%;" src="images/environment/chest1_close.png" alt="">
+							<div style="width: calc(var(--tile) * 1); height: calc(var(--tile) * 0.5); position: absolute; top: 0; right: 0;"></div>
+							<p id="chest_1" style="position: absolute; width: calc(var(--tile) * 1.5); height: var(--tile); bottom: -70%;" type="storage" containts="key_chest_1" locked="true"></p>
+						</span>
+					</div>
+					<div class="player" facing="left">
+						<div id="collider">
+							<div id="playerColliderRadar"></div>
+							<div id="playerColliderTop"></div>
+							<div id="playerColliderBottom"></div>
+							<div id="playerColliderLeft"></div>
+							<div id="playerColliderRight"></div>
+						</div>
+						<div class="shadow pixel"></div>
+						<div class="player_spritesheet pixel"></div>
+					</div>
+				</div>
+				<div id="ui">
+					<div class="incomplete_note" style="padding: 30px; position: absolute; top: 0%; left: auto; background-color: red; color: white; font-size: 20px; border: 7px solid black;">Work in progress!!</div>
+					<div id="notify" class="glass">
+						Press [Space], [Enter] OR (A)
+					</div>
+					<div id="uiDialogueContainer" class="glass">
+						<div id="DialogueImage" class="pixel">
+							<img src="images/characters/carrot_head.png" id="speakerIamge" draggable="false">
+						</div>
+						<div id="DialogueText">
+							<div id="speakerName">
+								Carrot
+							</div>
+							<div id="speakerDialogue">
+							</div>
+							<div id="DialogueBottomArrow">_</div>
+						</div>
+					</div>
+					<div id="AButton" class="pixel">
+						A
+					</div>
+					<div id="musicButton"  onclick="play_audio()" class="pixel">
+						<img id="music_button" src="images/music_note-cross.png" style="width: 50px; height: 50px; margin-top: 12.5px;" class="pixel" alt="">
+					</div>
+					<div id="joyControllerContainer">
+						<img src="images/buttontBig.png" draggable="false" style="width: 100%; height: 100%;" class="pixel" />
+						<div id="joyController">
+							<img src="images/buttont.png" id="joyControllerStickImage" class="pixel"/>		
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/joyController.js"></script>
+<script src="js/collider.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/dialogue.js"></script>
+<script src="js/toastify.js"></script>
+<script src="js/musicManager.js"></script>
+<script>
+	// var style = getComputedStyle(document.body);
+	var pixelSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--pixel-size'));
+	var cameraLeftOffset = pixelSize * (window.innerWidth / (pixelSize * 2.5));
+	var cameraTopOffset =  pixelSize *  (window.innerHeight / (pixelSize * 4));
+
+	var dialogueWrittenTextCounter = 0;
+	var dialogueAnimationSpeed = 100;
+	var joydirection = 'null';
+	var previousJoyDirection = '"null"';
+	var player = document.querySelector(".player");
+	var map = document.querySelector("#world-map");
+
+	//start in the custom postion of the map
+	var x = 219;
+	var y = 394;
+	// var x = 474;
+	// var y = 334;
+	var held_directions = []; //State of which arrow keys we are holding down
+	var speed = 1; //How fast the player moves in pixels per frame
+	var facingLeft = false;
+
+
+	/* Direction key state */
+	const directions = {
+		up: "up",
+		down: "down",
+		left: "left",
+		right: "right",
+	}
+	const keys = {
+		38: directions.up,
+		37: directions.left,
+		39: directions.right,
+		40: directions.down,
+		87: directions.up,
+		65: directions.left,
+		68: directions.right,
+		83: directions.down,
+	}
+
+	function addToArray(whatToAdd) {
+		if (whatToAdd && held_directions.indexOf(whatToAdd) === -1) {
+			held_directions.unshift(whatToAdd)
+			walking_sound("play")
+		}
+	}
+
+	function removeFromArray(wharToRemove) {
+		var index = held_directions.indexOf(wharToRemove);
+		if (index > -1) {
+			held_directions.splice(index, 1)
+		}
+		if (facingLeft) {
+			player.setAttribute("facing", 'left_idle');
+		}else{
+			player.setAttribute("facing", 'right_idle');
+		}
+		if(held_directions.length <= 0){
+			walking_sound("pause")
+		}
+	}
+
+	document.addEventListener("keydown", (e) => {
+		if(!speaking){
+			var dir = keys[e.which];
+			addToArray(dir);
+		}
+	});
+
+	document.addEventListener("keyup", (e) => {
+		if(!speaking){
+			var dir = keys[e.which];
+			removeFromArray(dir);
+			console.log("X "+ x)
+			console.log("Y "+ y)
+		}
+	});
+	window.onresize = function() {
+		pixelSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--pixel-size'));
+		cameraLeftOffset = pixelSize * (window.innerWidth / (pixelSize * 2.5));
+		cameraTopOffset =  pixelSize *  (window.innerHeight / (pixelSize * 4));
+	};
+
+	document.addEventListener('keyup', event => {
+		if (event.code === 'Space') { // On Keypress space
+			if(onStorage){
+				onStorage = false;
+				storageEvent();
+			}
+			if(onDoor){
+				x = Number(positionToChangePlayer.x);
+				y = Number(positionToChangePlayer.y);
+			}
+
+			if(onNpc){ // If on top of NPC trigger
+				console.log('On Space');
+				speaking = true; // Speaking becomes true
+				postSpeaking = false; // post speaking (after speaking trigger) also becomes false
+				lastTalkedCharacter = previousInteractableObjectId.split('_')[0]; // previous character will be changed by the new one
+				onNpc = false; // change on top of npc to false.
+				if(questActive){
+					Toastify({
+						text: "Complete The Quest first..",
+						duration: 3000
+					}).showToast();
+				}
+			}
+			if(onNpc || speaking){
+				nextDialogue = true; // next dialogue becomes true
+			}
+		}
+		if (event.code === 'KeyG') { // On Keypress space
+			
+			console.log('Added')
+		}
+	})
+
+	function storageEvent(){
+		if(document.getElementById(previousInteractableObjectId).getAttribute('locked') == 'true'){
+			event_sound("chest_open")
+			document.getElementById(previousInteractableObjectId).setAttribute('locked', 'false');
+			backpack.push(document.getElementById(previousInteractableObjectId).getAttribute('containts'));
+            document.getElementById(previousInteractableObjectId+'_image').src = document.getElementById(previousInteractableObjectId+'_image').src.replace('_close', '_open');
+		}
+	}
+
+
+	const placeCharacter = () => {
+
+		const held_direction = held_directions[0];
+		if (held_direction) {
+
+			if(!collisionChecker(held_directions[0])){
+				if (held_direction === directions.right) {x += speed;}
+				if (held_direction === directions.left) {x -= speed;}
+				if (held_direction === directions.down) {y += speed;}
+				if (held_direction === directions.up) {y -= speed;}
+			}
+
+			if (held_direction === directions.right) {facingLeft = false}
+			if (held_direction === directions.left) {facingLeft = true}
+
+			if(facingLeft){
+				player.setAttribute("facing", 'left_walk');
+			}else{
+				player.setAttribute("facing", 'right_walk');
+			}
+		}
+		map.style.transform = `translate3d( ${-x*pixelSize+cameraLeftOffset}px, ${-y*pixelSize+cameraTopOffset}px, 0 )`;
+		player.style.transform = `translate3d( ${x*pixelSize}px, ${y*pixelSize}px, 0 )`;  
+	}
+
+
+
+	let joystick1 = new JoystickController("joyController", 64, 40, 24, 8);
+
+	function update()
+	{
+		joydirection = JSON.stringify(joystick1.value.direction);
+		if(joydirection != '"null"'){
+			if(previousJoyDirection != joydirection){
+				addToArray(joydirection.replace(/"/g, ""));
+				removeFromArray(previousJoyDirection.replace(/"/g, ""));
+				previousJoyDirection = joydirection;
+			}
+		}else{
+			if(previousJoyDirection != '"null"'){
+				removeFromArray(previousJoyDirection.replace(/"/g, ""));
+				previousJoyDirection = '"null"';
+			}
+		}
+		
+	}
+
+	function loop()
+	{
+		dialogueSystem();
+		update();
+		placeCharacter();
+		requestAnimationFrame(loop);
+	}
+
+	loop();
+</script>
+</html>
