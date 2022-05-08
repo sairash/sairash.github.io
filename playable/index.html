@@ -11,8 +11,7 @@
 		<img src="images/cursor.png" id="cursorImage" draggable="false" style="width: 100%; height: 100%;" class="pixel" />
 	</div>
 	<div>
-		<div class="world pixel">
-			
+		<div class="world pixel" id="world">
 			<div class="camera">
 				<div id="world-map" class="pixel">
 					<div id="environment">
@@ -102,9 +101,58 @@
 					</div>
 				</div>
 				<div id="ui">
+					<div style="width: 100%; height: 100%; position: absolute; top: 0%; left: auto; background-color: #222034; z-index: 10000; display: none;" id="projectorContainer">
+						<img src="images/environment/projector_name.png" style="position: absolute; top: 5px; left: 50%; transform: translateX(-50%); height: 40px;">
+						<div style="position: absolute; top: 50px; width: 100%;">
+							<div style="width: 100%; height: 50px; display: flex;">
+								<img style="width: 50px; height: 100%;" src="images/environment/border.png">
+								<div style="width: calc(100vw - 100px); height: 100%; background-color: #ece2cd;"></div>
+								<img style="width: 50px; height: 100%; transform: rotateY(180deg);" src="images/environment/border.png">
+							</div>
+							<div style="width: 100%; height: calc(100vh - 200px); background-color: #ece2cd;">
+								<div style="width: 100%; height: 100%; overflow-y: hidden;" class="projectorBody">
+									<div style="width: 100%; height: 100%; text-align: center;">
+										<div style="position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between;">
+											<div style="padding: 10px; color: white;" onclick="heldLeftOrRight('left')" class="projectButton smallDisplayOn"> [←] </div>
+											<div style="padding: 10px; color: white;" onclick="heldLeftOrRight('right')" class="projectButton smallDisplayOn"> [→] </div>
+										</div>
+										<img src="" id="projectorImage" style="width: auto; height: 100%;" alt="">
+									</div>
+									<div style="width: 100%; height: 100%; font-size: 15px;">
+										<div style="font-size: 20px; width: 100%; text-align: center;" id="projectorTitle"></div>
+										<div style="font-size: 10px; width: 100%; text-align: center; margin-top: 10px; margin-bottom: 10px;" id="projectorWork"></div>
+										<div style="font-size: 12px; width: 100%; text-align: center; margin-top: 10px; margin-bottom: 10px;"> <a href="#" id="projectorLink"></a> </div>
+										<div  class="projectInfo" style="padding-left: 10px; padding-right: 10px; overflow-y: auto;" id="projectorInfo"></div>
+									</div>
+								</div>
+							</div>
+							<div style="width: 100%; height: 50px; display: flex;">
+								<img style="width: 50px; height: 100%; transform: rotateX(180deg);" src="images/environment/border.png">
+								<div style="width: calc(100vw - 100px); height: 100%; background-color: #ece2cd;"></div>
+								<img style="width: 50px; height: 100%;transform: rotate(180deg);" src="images/environment/border.png">
+							</div>
+						</div>
+						<div style="position: absolute; bottom: 5px; color: white; font-size: 20px; width: calc(100vw - 100px); left: 50px; display: flex; justify-content: space-between;">
+							<div style="background-color: #222034;" class="smallDisplayOff">
+								<div style="width: 100%; text-align: center;">Use</div>
+								<div style="display: flex;">
+									<div style="padding: 10px;" onclick="heldLeftOrRight('left')" class="projectButton"> A [←] </div>
+									<div style="padding: 10px;" onclick="heldLeftOrRight('right')" class="projectButton"> D [→] </div>
+								</div>
+							</div>
+							<div style="background-color: #222034;">
+								<div style="width: 100%; text-align: center;" class="smallDisplayOff">Or</div>
+								<div style="display: flex;">
+									<div style="padding: 10px;" onclick="disableProjector()" class="projectButton"> <span class="smallDisplayOff">ESC</span> <span class="smallDisplayOn">X</span> </div>
+								</div>
+							</div>
+						</div>
+						<img style="position: absolute; bottom: 0; left: 50%; height: 200px; transform: translateX(-50%);" src="images/characters/carrot_back.png">
+					</div>
+
 					<div class="incomplete_note" style="padding: 30px; position: absolute; top: 0%; left: auto; background-color: red; color: white; font-size: 20px; border: 7px solid black;">Work in progress!!</div>
 					<div id="notify" class="glass">
-						Press [Space], [Enter] OR (A)
+						Press [Space] OR (A)
 					</div>
 					<div id="uiDialogueContainer" class="glass">
 						<div id="DialogueImage" class="pixel">
@@ -119,11 +167,11 @@
 							<div id="DialogueBottomArrow">_</div>
 						</div>
 					</div>
-					<div id="AButton" class="pixel">
+					<div id="AButton" class="pixel" onclick="onAButtonClick()">
 						A
 					</div>
 					<div id="musicButton"  onclick="play_audio()" class="pixel">
-						<img id="music_button" src="images/music_note-cross.png" style="width: 50px; height: 50px; margin-top: 12.5px;" class="pixel" alt="">
+						<img id="music_button" src="images/music_note-cross.png" class="pixel musicPlayImage" alt="">
 					</div>
 					<div id="joyControllerContainer">
 						<img src="images/buttontBig.png" draggable="false" style="width: 100%; height: 100%;" class="pixel" />
@@ -141,6 +189,9 @@
 <script src="js/cursor.js"></script>
 <script src="js/dialogue.js"></script>
 <script src="js/toastify.js"></script>
+<script src="js/projectorData.js"></script>
+<script src="js/projector.js"></script>
+<script src="js/title.js"></script>
 <script src="js/musicManager.js"></script>
 <script>
 	// var style = getComputedStyle(document.body);
@@ -163,6 +214,7 @@
 	var held_directions = []; //State of which arrow keys we are holding down
 	var speed = 1; //How fast the player moves in pixels per frame
 	var facingLeft = false;
+	var heldUp = 0;
 
 
 	/* Direction key state */
@@ -218,47 +270,56 @@
 			removeFromArray(dir);
 			console.log("X "+ x)
 			console.log("Y "+ y)
+			heldUp = 0;
 		}
 	});
 	window.onresize = function() {
 		pixelSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--pixel-size'));
 		cameraLeftOffset = pixelSize * (window.innerWidth / (pixelSize * 2.5));
 		cameraTopOffset =  pixelSize *  (window.innerHeight / (pixelSize * 4));
+		changeCameraHeight();
 	};
 
 	document.addEventListener('keyup', event => {
 		if (event.code === 'Space') { // On Keypress space
-			if(onStorage){
-				onStorage = false;
-				storageEvent();
-			}
-			if(onDoor){
-				x = Number(positionToChangePlayer.x);
-				y = Number(positionToChangePlayer.y);
-			}
+			doOnKeyPressOrButtonClicked()
+		}else if(event.code == 'Escape'){
+			if (projectorEnabled){disableProjector()}
+		}
+	});
+	function changeCameraHeight(){
+		document.getElementById('world').style.height = window.innerHeight+'px';
+	}
 
-			if(onNpc){ // If on top of NPC trigger
-				console.log('On Space');
-				speaking = true; // Speaking becomes true
-				postSpeaking = false; // post speaking (after speaking trigger) also becomes false
-				lastTalkedCharacter = previousInteractableObjectId.split('_')[0]; // previous character will be changed by the new one
-				onNpc = false; // change on top of npc to false.
-				if(questActive){
-					Toastify({
-						text: "Complete The Quest first..",
-						duration: 3000
-					}).showToast();
-				}
-			}
-			if(onNpc || speaking){
-				nextDialogue = true; // next dialogue becomes true
+	function onAButtonClick(){
+		doOnKeyPressOrButtonClicked()
+	}
+
+	function doOnKeyPressOrButtonClicked(){
+		if(onStorage){
+			onStorage = false;
+			storageEvent();
+		}
+		if(onDoor){
+			enableProjector();
+		}
+
+		if(onNpc){ // If on top of NPC trigger
+			speaking = true; // Speaking becomes true
+			postSpeaking = false; // post speaking (after speaking trigger) also becomes false
+			lastTalkedCharacter = previousInteractableObjectId.split('_')[0]; // previous character will be changed by the new one
+			onNpc = false; // change on top of npc to false.
+			if(questActive){
+				Toastify({
+					text: "Complete The Quest first..",
+					duration: 3000
+				}).showToast();
 			}
 		}
-		if (event.code === 'KeyG') { // On Keypress space
-			
-			console.log('Added')
+		if(onNpc || speaking){
+			nextDialogue = true; // next dialogue becomes true
 		}
-	})
+	}
 
 	function storageEvent(){
 		if(document.getElementById(previousInteractableObjectId).getAttribute('locked') == 'true'){
@@ -275,15 +336,25 @@
 		const held_direction = held_directions[0];
 		if (held_direction) {
 
-			if(!collisionChecker(held_directions[0])){
-				if (held_direction === directions.right) {x += speed;}
-				if (held_direction === directions.left) {x -= speed;}
-				if (held_direction === directions.down) {y += speed;}
-				if (held_direction === directions.up) {y -= speed;}
+			if(!projectorEnabled){
+				if(!collisionChecker(held_directions[0])){
+					if (held_direction === directions.right) {x += speed; facingLeft = false; changeCurrentPosition(held_direction)}
+					if (held_direction === directions.left) {x -= speed; facingLeft = true; changeCurrentPosition(held_direction)}
+					if (held_direction === directions.down) {y += speed;}
+					if (held_direction === directions.up) {y -= speed;}
+				}
+			}else{
+				if(heldUp == 0){
+					if (held_direction === directions.right) {
+						heldLeftOrRight(held_direction)
+					}
+					if (held_direction === directions.left) {
+						heldLeftOrRight(held_direction)
+					}
+					heldUp +=1;
+				}
 			}
 
-			if (held_direction === directions.right) {facingLeft = false}
-			if (held_direction === directions.left) {facingLeft = true}
 
 			if(facingLeft){
 				player.setAttribute("facing", 'left_walk');
@@ -326,5 +397,7 @@
 	}
 
 	loop();
+	changeCameraHeight();
+	titleShow();
 </script>
 </html>

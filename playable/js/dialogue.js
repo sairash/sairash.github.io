@@ -112,7 +112,7 @@ function dialogueSystem() {
                 speaking = false;
             }
             document.getElementById('speakerIamge').src = dialogue[lastTalkedCharacter].img;
-            document.getElementById('speakerName').innerHTML = lastTalkedCharacter+" <small style='color:red;'><i> [Press Space] </i></small>";
+            document.getElementById('speakerName').innerHTML = lastTalkedCharacter+" <small style='color:red;'><i> [Press [Space] OR (A)] </i></small>";
         }else{
             if(!postSpeaking){
                 uiDialogueContainer.style.display = 'none';
