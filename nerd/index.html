@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::-moz-selection { /* Code for Firefox */
+            color: #b57029;
+            background: #fff73f;
+        }
+
+        ::selection {
+            color: #b57029;
+            background: #fff73f;
+        }
+        html{
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: black;
+            background-image: radial-gradient(rgb(255, 186, 36), black 120%);
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            color: white;
+            text-shadow: 0 0 5px #C8C8C8;
+            animation-duration: 1s;
+            animation-name: textflicker;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            font: 1.3rem Inconsolata, monospace;
+        }
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+            pointer-events: none;
+        }
+
+
+        pre {
+            margin: 0;
+        }
+        .block_orange{
+            padding: 0 25px 0 10px;
+            background-color: #c94f24;
+            -webkit-clip-path: polygon(88% 0, 100% 50%, 88% 100%, 0 100%, 0 0);
+            clip-path: polygon(88% 0, 100% 50%, 88% 100%, 0 100%, 0 0);
+        }
+        .block_yellow{
+            margin-left: -21px;
+            padding: 0 15px 0 20px;
+            background-color: #feb02e;
+            -webkit-clip-path: polygon(50% 0%, 88% 0, 100% 50%, 88% 100%, 0 100%, 12% 50%, 0 0);
+            clip-path: polygon(50% 0%, 88% 0, 100% 50%, 88% 100%, 0 100%, 12% 50%, 0 0);
+        }
+        #outputBlock div{
+            margin: 10px 0px;
+        }
+        input{
+            height: 1.4rem;
+            font-size: 1.3rem;
+            background-color: rgba(0, 0, 0, 0);
+            border: 0;
+            color:white;
+            width: 100%;
+            margin-left: 5px;
+            text-shadow: 0 0 5px #C8C8C8;
+            outline: none;
+        }
+
+        pre.commandBlock {
+            margin-left: 5px;
+        }
+        pre.commandBlock .cursor {
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+        from,
+        to {
+            /* background-color: transparent; */
+            color: transparent;
+            text-shadow: 0 0 5px transparent;
+        }
+        50% {
+            /* background-color: #fff; */
+            color: #fff;
+            text-shadow: 0 0 5px #C8C8C8;
+        }
+        }
+        @keyframes textflicker {
+            from {
+                text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+            }
+            to {
+                text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+            }
+        }
+        .selection-none{
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                    user-select: none; 
+        }
+        .link{
+            padding: 0 4px;
+            border-radius: 4px;
+            background-color: #ff7327;
+            cursor: pointer;
+        }
+        .text_blue{
+            background-color: springgreen;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .table_help{
+            border-collapse: separate;
+            border-spacing: 10px 5px;
+        }
+        .table_help th{
+            font-size: 25px;
+            text-align: left;
+        }
+        .table_help th span{
+            padding: 0 4px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .table_help th .green{
+            background-color: springgreen;
+        }
+        .table_help th .orange{
+            background-color: #ff7327;
+        }
+        .table_help .dash{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" style="overflow-y: auto; height: 100%;">
+    <div id="outputBlock" style="padding-top: 40px; padding-left:40px;">
+        <pre>
+        { }
+        {^^,
+        (   `-;       ____        _               _       
+   _     `;;~~       / ___|  __ _(_)_ __ __ _ ___| |__  
+  /(______);         \___ \ / _` | | '__/ _` / __| '_ \ 
+ (         (          ___) | (_| | | | | (_| \__ \ | | |
+  |:------( )        |____/ \__,_|_|_|  \__,_|___/_| |_|
+_//         \\
+/ /          vv
+</pre>
+        <div>Hi <span class="text_blue">Nerds</span> Welcome!</div>
+        <div>This is my portfolio </div>
+        <div>For list of commands type <span class="link">help</span></div>
+    </div>
+    <div style="display: flex; padding-bottom: 40px; padding-left:40px;">
+        <span style="width: auto; display: flex;" class="selection-none">
+            <span class="block_orange">Sairash</span>
+            <span class="block_yellow">portfolio</span>
+        </span>
+        <pre> $</pre>
+        <pre class="commandBlock"><span id="commandBlock">Type your command </span><span class="cursor">▌</span></pre>
+    </div>
+    </div>
+</body>
+<script>
+    container = document.getElementById('container');
+    commandBlock = document.getElementById('commandBlock');
+    current_string = ''
+    valid_commands={
+        exit:{
+            data: '<div>Exit</div>'
+        },
+        help:{
+            data: `<pre>
+╔══════════════════════════════════╗
+   SO You NEED HELP HMM.. (ಠ⌣ಠ)   
+╚══════════════════════════════════╝</pre>
+<div>Type in these commands to navigate this site:</div>
+<table class='table_help'>
+    <tr><th><span class="green">about</span></th></tr>
+    <tr>
+        <td class="dash">-</td>
+        <td>Get to know about me</td>
+    </tr>
+    <tr><th><span class="orange">projects</span></th></tr>
+    <tr>
+        <td class="dash">-</td>
+        <td>Look at my projects</td>
+    </tr>
+    <tr><th><span class="orange">skills</span></th></tr>
+    <tr>
+        <td class="dash">-</td>
+        <td>I'm pretty good at some things</td>
+    </tr>
+    <tr><th><span class="orange">repo</span></th></tr>
+    <tr>
+        <td class="dash">-</td>
+        <td>Take a look at some of my work</td>
+    </tr>
+    <tr><th><span class="orange">cv</span></th></tr>
+    <tr>
+        <td class="dash">-</td>
+        <td>Check out my CV [pdf]</td>
+    </tr>
+    <tr><th><span class="orange">contact</span></th></tr>
+    <tr>
+        <td class="dash">-</td>
+        <td>Talk to me</td>
+    </tr>
+</table>
+`
+        }
+    }
+    validstring = 'abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_=+?/.,\\|\';":[{}] '
+    document.addEventListener('keydown', logKey);
+
+    function logKey(e) {
+        if(e.key == 'Backspace'){
+            if(current_string != '')
+                current_string = current_string.slice(0, -1);
+        }else if(e.key == 'Tab' || e.key == 'ArrowRight'){
+            for (let index = 0; index < Object.keys(valid_commands).length; index++) {
+                if(Object.keys(valid_commands)[index].includes(current_string)){
+                    current_string = Object.keys(valid_commands, 2)[index];
+                    break;
+                }
+            }
+
+            e.preventDefault();
+        }
+        else if(e.key == 'Enter'){
+            outputBlock = document.getElementById('outputBlock');
+            outputBlock.innerHTML = outputBlock.innerHTML+
+            `
+            <div style="display: flex;">
+                <span style="width: auto; display: flex;" class="selection-none">
+                    <span class="block_orange">Sairash</span>
+                    <span class="block_yellow">portfolio</span>
+                </span>
+                <pre> $</pre>
+                <pre class="commandBlock"><span>`+current_string+`</span></pre>
+            </div>
+            `
+            if(valid_commands[current_string] != undefined){
+                outputBlock.innerHTML = outputBlock.innerHTML+ valid_commands[current_string].data
+            }else{
+                outputBlock.innerHTML = outputBlock.innerHTML+ '<div>Invalid Command Type <span class="link">help</span> to get the list of commands.</div>'
+            }
+            current_string = ''
+        }else if(validstring.includes(e.key.toLowerCase())){
+            if (current_string.length < 40)
+                current_string += e.key
+        }
+        current_string_print()
+    }
+
+    function current_string_print(){
+        commandBlock.textContent = current_string
+    }
+    function virtual_screen(){
+        console.log(window.innerHeight)
+        document.body.style.height = window.innerHeight + 'px'
+        document.body.style.width = window.innerWidth + 'px'
+    }
+    virtual_screen();
+    current_string_print();
+</script>
+</html>
