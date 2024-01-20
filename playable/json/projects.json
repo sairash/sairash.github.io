@@ -1,5 +1,15 @@
 [
     {
+        "title": "Celeb Twin",
+        "image": "https://akocdw82ai.ufs.sh/f/Jk6mQ2VBlE6toM0vSlyciU06w7xkslLhGM2DZ3vBazQFypuT",
+        "small": "An app to check whch of the 10k celeberities you look alike.",
+        "work": "WASM",
+        "description": " This platform allows users to either upload or take a picture to instantly find out which of 10,000 celebrities they resemble the most. The entire process happens seamlessly within the user's browser, eliminating the need for a complex backend system while ensuring fast and efficient results. I achieved this by first extracting facial data from 20 images of each celebrity, storing these embeddings in a high-performance vector database. When a user uploads their photo, our app processes their facial data on the client side and, using WebAssembly (WASM), efficiently matches it against the stored dataset to find the closest lookalikes. Importantly, no data is ever collected or stored, ensuring complete privacy. Best of all, the service is entirely free to use!",
+        "date": "2025",
+        "link": "https://celebtwin.sairashgautam.com.np/",
+        "type": "interested"
+    },
+    {
         "title": "Screeenpals",
         "image": "https://utfs.io/f/Jk6mQ2VBlE6thFe39mwV7QrR1gJjUZ5eHhFYsBCimnq8lp4w",
         "small": "A site to watch free movies and series that is synced with another person.",
@@ -7,7 +17,7 @@
         "description": "This platform allows users to watch movies and series together in real time, completely free and without any ads. Designed with a focus on simplicity and functionality, it utilizes Vue.js for the front end to create a seamless user experience, while pure PHP handles the server-side operations. PeerJS is integrated to synchronize content playback across viewers in a shared room, ensuring everyone is watching in sync. <br/> <br/> The platform itself does not host or store any media content. Instead, it fetches streams from external sources and displays them for users, acting as an interface for shared viewing rather than a content provider. No copies of any media are stored on the server, and user privacy and data security are prioritized. <br/> <br/> This project is created solely for educational purposes, intended to demonstrate the capabilities of modern web technologies in building synchronized media experiences. It does not support or endorse piracy in any form.",
         "date": "2024",
         "link": "https://screeenpals.sairashgautam.com.np/",
-        "type": "interested"
+        "type": "project"
     },
     {
         "title": "Danfe Programming Langauge",
