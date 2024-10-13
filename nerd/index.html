@@ -233,7 +233,15 @@
     </tr>
 </table>
 `
-        }
+        },
+    cv: {
+        data: `<pre>
+            <div>Redirecting to CV
+If browser doesnot automatically redirect click: <a target="_blank" href="https://drive.google.com/file/d/1zaAVcj0rzuAksosbnnKLvePNw05tKx6S/view?usp=sharing">CV URL</a></div>
+</pre>`,
+        action: "redirect",
+        extra_data: "https://drive.google.com/file/d/1zaAVcj0rzuAksosbnnKLvePNw05tKx6S/view?usp=sharing"
+    }
     }
     validstring = 'abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_=+?/.,\\|\';":[{}] '
     document.addEventListener('keydown', logKey);
@@ -267,6 +275,13 @@
             `
             if(valid_commands[current_string] != undefined){
                 outputBlock.innerHTML = outputBlock.innerHTML+ valid_commands[current_string].data
+                switch (valid_commands[current_string].action) {
+                    case "redirect":
+                        setTimeout(()=>{
+                            window.open('https://drive.google.com/file/d/1zaAVcj0rzuAksosbnnKLvePNw05tKx6S/view?usp=sharing', '_blank');
+                        }, 500)
+                        break;
+                }
             }else{
                 outputBlock.innerHTML = outputBlock.innerHTML+ '<div>Invalid Command Type <span class="link">help</span> to get the list of commands.</div>'
             }
@@ -280,6 +295,7 @@
 
     function current_string_print(){
         commandBlock.textContent = current_string
+        document.body.scrollTo(0, document.body.scrollHeight);
     }
     function virtual_screen(){
         console.log(window.innerHeight)
