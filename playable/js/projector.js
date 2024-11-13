@@ -8,46 +8,67 @@ projectorInfoDom = document.getElementById("projectorInfo")
 projectorLinkDom = document.getElementById("projectorLink")
 projectorSelected = 0
 
+projectorData = []
+
+async function fetchProjectData() {
+    try {
+        // Fetch the JSON data
+        const response = await fetch('/playable/json/projects.json');
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+
+        return await response.json();
+
+    } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+    }
+}
 
 
-function enableProjector(){
+
+
+function enableProjector() {
     projectorEnabled = true;
     projectorDomToggle();
 }
 
-function disableProjector(){
+function disableProjector() {
     projectorEnabled = false;
     projectorDomToggle();
 }
 
-function projectorDomToggle(){
-    if(projectorEnabled){
+function projectorDomToggle() {
+    if (projectorEnabled) {
         projectorContainerDom.style.display = "block";
-    }else{
+    } else {
         projectorContainerDom.style.display = "none";
     }
-    
+
 }
 
-function heldLeftOrRight(direction){
-    if(direction == 'left'){
-        if(projectorSelected <= 0){
+function heldLeftOrRight(direction) {
+    if (direction == 'left') {
+        if (projectorSelected <= 0) {
             projectorSelected = projectorData.length - 1
-        }else{
-            projectorSelected -=1;
+        } else {
+            projectorSelected -= 1;
         }
-    }else{
-        if(projectorSelected >= projectorData.length - 1){
-            console.log('here')
+    } else {
+        if (projectorSelected >= projectorData.length - 1) {
             projectorSelected = 0
-        }else{
-            projectorSelected +=1;
+        } else {
+            projectorSelected += 1;
         }
     }
     changeProjectorData();
 }
 
-function changeProjectorData(){
+async function changeProjectorData() {
+    if(projectorData.length == 0) {
+        projectorData = await fetchProjectData();
+    }
     projectorImageDom.src = projectorData[projectorSelected].image
     projectorTitleDom.innerHTML = projectorData[projectorSelected].title
     projectorWorkDom.innerHTML = projectorData[projectorSelected].work
