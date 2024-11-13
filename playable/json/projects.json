@@ -1,16 +1,119 @@
 [
     {
-        "title": "Meltdown",
-        "image": "https://picsum.photos/id/237/200/300",
-        "small": "A site to centralize all gyms in Nepal.",
+        "title": "Screeenpals",
+        "image": "https://utfs.io/f/Jk6mQ2VBlE6thFe39mwV7QrR1gJjUZ5eHhFYsBCimnq8lp4w",
+        "small": "A site to watch free movies and series that is synced with another person.",
         "work": "Fullstack • UI Designer",
-        "description": "This project was made for things."
+        "description": "This platform allows users to watch movies and series together in real time, completely free and without any ads. Designed with a focus on simplicity and functionality, it utilizes Vue.js for the front end to create a seamless user experience, while pure PHP handles the server-side operations. PeerJS is integrated to synchronize content playback across viewers in a shared room, ensuring everyone is watching in sync. <br/> <br/> The platform itself does not host or store any media content. Instead, it fetches streams from external sources and displays them for users, acting as an interface for shared viewing rather than a content provider. No copies of any media are stored on the server, and user privacy and data security are prioritized. <br/> <br/> This project is created solely for educational purposes, intended to demonstrate the capabilities of modern web technologies in building synchronized media experiences. It does not support or endorse piracy in any form.",
+        "date": "2024",
+        "link": "https://screeenpals.sairashgautam.com.np/"
     },
     {
-        "title": "Kulfi",
-        "image": "https://picsum.photos/id/227/200/300",
-        "small": "A site to watch free movies and series.",
+        "title": "Danfe Programming Langauge",
+        "image": "https://utfs.io/f/Jk6mQ2VBlE6tJvy6SfVBlE6tumDzfiKX2RrbsTLOPYUd4IV8",
+        "small": "A Programming Language made by me.",
+        "work": "Programming Language",
+        "description": " A Programming Language made by me called Danfe, inspired by the syntax of Lua and drawing ideas from languages like Python and CoffeeScript. Danfe is currently an interpreted language with several unique quirks, but I’m working on making it a compiled language with static typing. While Danfe can be used to create a wide range of programs (excluding server-side applications), it integrates directly with V language for added flexibility. You can start building projects in Danfe by visiting the GitHub link above. Happy coding!",
+        "date": "2024",
+        "link": "https://github.com/sairash/danfe-v"
+    },
+    {
+        "title": "Buuzz",
+        "image": "https://utfs.io/f/Jk6mQ2VBlE6tp9mNRnkmPQe2d0cfNvlGS1EC5rgLKqWpjowZ",
+        "small": "Simplify transportation, enhance dining experiences, and strengthen connections between people.",
+        "work": "Backend • Realtime Sockets",
+        "description": "A UK-based company with a vision to simplify transportation, enhance dining experiences, and strengthen connections between people, also extends its services to food delivery through its Nepal branch. I had the opportunity to collaborate closely with both the UK and Nepal teams to develop a reliable and efficient ride-sharing system for Buuzz, utilizing JavaScript and Socket.io for real-time communication. Additionally, I contributed to the food delivery section, where we used Laravel to build a robust and scalable delivery platform, ensuring smooth and timely service for customers. This project allowed me to work across diverse teams and technologies to deliver seamless and impactful solutions for both transportation and food services.",
+        "date": "2023",
+        "link": "https://play.google.com/store/apps/details?id=com.buuzz.user"
+    },
+    {
+        "title": "TIA (Tribhuvan International airport)",
+        "image": "https://utfs.io/f/Jk6mQ2VBlE6tzwKRucxcaKvjeolUV81nmEQw7yN5zLhtIJpY",
+        "small": "International Airport of Nepal",
+        "work": "Frontend • Backend",
+        "description": "A comprehensive web application for the TIA (Tribhuvan International airport) in Nepal. The front end is crafted with UIKit, vanilla JavaScript, HTML, and CSS, ensuring a clean, responsive, and user-friendly interface for travelers and staff alike. Laravel powers the back end, providing a robust and scalable framework that efficiently handles data processing, user authentication, and real-time updates. This platform facilitates seamless information flow, allowing users to access flight schedules, updates, and airport services in one place. Built with efficiency and usability in mind, the web app enhances the airport's digital presence and improves the overall travel experience. This project marks a significant technological advancement in Nepal’s aviation infrastructure.",
+        "date": "2022",
+        "link": "https://www.tiairport.com.np/"
+    },
+    {
+        "title": "Legal Remit Nepal",
+        "image": "https://utfs.io/f/Jk6mQ2VBlE6t9lJWj0N1g3dW4hYzBClEsHpSKvjfumNtoMq6",
+        "small": "Transfer money from Austrialia to Nepal.",
         "work": "Fullstack • UI Designer",
-        "description": "This project was made for things."
+        "description": "Legal Remit Nepal has a real-time money transfer service for Nepal, allowing users to send funds from Australia to Nepal in less than two minutes. This service sets a new standard for speed and convenience in cross-border remittances, addressing a critical need for efficient and reliable financial transactions for the Nepalese community abroad. <br/><br/> Due to a Non-Disclosure Agreement (NDA), I’m unable to share details about the specific technologies used to develop the front end or back end of the platform. However, this project was incredibly rewarding to work on, particularly as it involved tackling complex challenges with real-time systems to ensure seamless, instant transfers. The result is a powerful, secure platform that redefines the remittance experience between Australia and Nepal, providing users with unparalleled efficiency and peace of mind.",
+        "date": "2022",
+        "link": "https://legalremitnepal.com.au/"
+    },
+    {
+        "title": "Pixelchain",
+        "image": "https://raw.githubusercontent.com/sairash/pixel-chain/refs/heads/master/public/chainpixels.png",
+        "small": "Working Blockchain and IPFS App made in 36 hours For Hackathon.",
+        "work": "BlockChain • Frontend",
+        "description": "Pixelchain is an innovative blockchain-based application designed to revolutionize event photo management. Built using React and Capacitor.js for the front end, and Solidity for the back end, Pixelchain securely stores photo data on IPFS (InterPlanetary File System), ensuring that images remain decentralized and tamper-proof. The app’s primary goal is to become the leading global solution for event photo management. For example, when attending an event, users can scan a QR code to enter the event within the app. Any photos they take are then automatically stored on IPFS, with the IPFS hash saved securely on the blockchain, creating a permanent and traceable record.<br/> <br/> In addition to secure photo storage, Pixelchain includes a unique machine learning feature that leverages face-api.js to help users find all photos of themselves taken by other users at the event. This feature brings a personalized experience, allowing attendees to relive moments captured by others. The project was developed during a 36-hour hackathon, where it successfully won the competition, showcasing its potential as a groundbreaking tool in the realm of event photo management.",
+        "date": "2024",
+        "link": "https://github.com/sairash/pixel-chain"
+    },
+    {
+        "title": "ChitoSocket",
+        "image": "https://utfs.io/f/Jk6mQ2VBlE6tZhr74rngjRlfiMK6r04kEQNc59egnYLduJA3",
+        "small": "A very good socket server made in golang.",
+        "work": "Golang • Socket",
+        "description": "ChitoSocket is a fast, lightweight WebSockets library with room systems for Go. It can handle millions of connections and uses very little RAM. ChitoSocket is easy to use, and you can write a blazingly fast WebSockets application in less than 10 lines of code. hitoSocket is built on top of the gobwas/ws library. It is also based on the findings of the article 'Million WebSockets and Go'",
+        "date": "2021",
+        "link": "https://github.com/sairash/chitosocket"
+    },
+    {
+        "title": "NepaliLaiKaam",
+        "image": "https://utfs.io/f/Jk6mQ2VBlE6tw2TPj7ENF2MqUHbJiQOD8fPktGxB5KmlY9sz",
+        "small": "Nepali lai kaam, the largest Nepalese community in Australia!",
+        "work": "Frontend • Backend",
+        "description": "At Nepali Lai Kaam, the primary mission is to support Nepalese students in finding jobs, accommodation, and essential resources in Australia. The platform recognizes the unique challenges of adapting to life in a new country, aiming to ease this transition through a supportive, community-driven approach. Built with a Laravel back end and a Vue.js front end, this web app provides a seamless user experience that connects students to the resources they need. By fostering connections and offering valuable tools, Nepali Lai Kaam is committed to making life in Australia more accessible and welcoming for Nepalese newcomers.",
+        "date": "2021",
+        "link": "https://nepalilaikaam.com.au/"
+    },
+    {
+        "title": "Meltdown",
+        "image": "https://sairash.github.io/standard/img/my/meltdown_big_front.png",
+        "small": "One stop for fitness.",
+        "work": "Frontend • Backend",
+        "description": "Meltdown is a comprehensive platform that connects all gyms across Nepal, offering users an easy and convenient way to access personalized training plans tailored to their fitness goals. With a curated catalog of the best trainers in the country, Meltdown ensures that every user can find expert guidance suited to their needs, whether they're looking for specialized workout plans or general fitness advice. The platform also provides exclusive offers, featuring the best prices and deals available nationwide, making fitness more affordable and accessible to everyone. By integrating a wide range of gyms and trainers, Meltdown fosters a vibrant fitness community. The project was developed using Node.js for the back end and Vue.js for the front end, providing a seamless and interactive user experience. This combination of technologies allows for real-time updates and efficient data management, ensuring that users always have access to the latest offerings and training options.",
+        "date": "2021",
+        "link": "https://meltdwn.herokuapp.com/"
+    },
+    {
+        "title": "Medinoor",
+        "image": "https://raw.githubusercontent.com/sairash/Medinoor/main/Medinoor/public/img/screenshots/search-doctors-by-body.PNG",
+        "small": "Effective app for medical sector",
+        "work": "Frontend • Backend • UI Designer",
+        "description": "This project was an exciting challenge, as I developed an effective web application for the medical sector within just 25 days. The app integrates a fully functional Twilio SMS system, allowing the server to send emergency alerts to ambulances within a 3km radius whenever the Medinoor app triggers an emergency. The goal was to create a fast and reliable solution for critical situations, ensuring that help could be dispatched promptly to those in need. Despite the tight timeline, the project was successfully completed, showcasing my ability to meet deadlines and deliver impactful solutions in the healthcare space.",
+        "date": "2021",
+        "link": "https://github.com/sairash/Medinoor"
+    },
+    {
+        "title": "Patra",
+        "image": "https://raw.githubusercontent.com/sairash/Patra/main/screenshots/patra_homepage.png",
+        "small": "An online Journal for everyone",
+        "work": "Frontend • Backend • UI Designer",
+        "description": "This online journal web app was designed with a range of thoughtful features to help users reflect on the past and journal more effectively. Built with Laravel, the app allows users to easily capture their thoughts, memories, and experiences in a seamless and efficient way. As one of my early projects, it presented numerous challenges, but also provided valuable learning experiences that helped me grow as a developer. Despite the obstacles, this project became very dear to me, as it not only marked a milestone in my development journey but also holds a personal connection, as I believe in the power of journaling for self-reflection and growth.",
+        "date": "2020",
+        "link": "https://github.com/sairash/Patra"
+    },
+    {
+        "title": "GPS Tracker",
+        "image": "https://github.com/sairash/gps-tracker/raw/master/assets/gps-walkietalkie-edit.gif",
+        "small": "GPS tracker for munjushree trail",
+        "work": "Rust • Frontend • Backend",
+        "description": "I developed a GPS tracking system for the Munjushree Trail, Nepal's only ITRA-certified 100-mile trail race. As a volunteer for the event, I was tasked with creating a system that would allow organizers to track participants' locations in real time and communicate with them instantly via voice call. With just two days to build the solution, I utilized Rust for the socket connections to ensure fast, reliable tracking and Vue.js for the front end to provide a smooth user experience. To enable seamless communication, I integrated PeerJS for the WebRTC voice call feature, allowing participants to easily reach the admin with a single click. This project was both a challenging and rewarding experience, showcasing my ability to work under tight deadlines and deliver a functional, real-time solution for such a unique event.",
+        "date": "2021",
+        "link": "https://github.com/sairash/gps-tracker"
+    },
+    {
+        "title": "Daledai",
+        "image": "https://utfs.io/f/Jk6mQ2VBlE6tZNSozogjRlfiMK6r04kEQNc59egnYLduJA3w",
+        "small": "Search Engine in golang",
+        "work": "Fullstack • UI Designer",
+        "description": "A search engine built in Go to counteract the data collection practices of Google, with a specific focus on serving the needs of Nepal (currently a work in progress).",
+        "date": "2023",
+        "link": "https://github.com/sairash/daledai"
     }
 ]
