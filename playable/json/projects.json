@@ -52,7 +52,7 @@
     {
         "title": "Pixelchain",
         "image": "https://raw.githubusercontent.com/sairash/pixel-chain/refs/heads/master/public/chainpixels.png",
-        "small": "Working Blockchain and IPFS App made in 36 hours For Hackathon.",
+        "small": "Event Photo sharing app made with `Blockchain` and `IPFS` within 36 hours For Hackathon.",
         "work": "BlockChain • Frontend",
         "description": "Pixelchain is an innovative blockchain-based application designed to revolutionize event photo management. Built using React and Capacitor.js for the front end, and Solidity for the back end, Pixelchain securely stores photo data on IPFS (InterPlanetary File System), ensuring that images remain decentralized and tamper-proof. The app’s primary goal is to become the leading global solution for event photo management. For example, when attending an event, users can scan a QR code to enter the event within the app. Any photos they take are then automatically stored on IPFS, with the IPFS hash saved securely on the blockchain, creating a permanent and traceable record.<br/> <br/> In addition to secure photo storage, Pixelchain includes a unique machine learning feature that leverages face-api.js to help users find all photos of themselves taken by other users at the event. This feature brings a personalized experience, allowing attendees to relive moments captured by others. The project was developed during a 36-hour hackathon, where it successfully won the competition, showcasing its potential as a groundbreaking tool in the realm of event photo management.",
         "date": "2024",
