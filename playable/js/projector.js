@@ -12,14 +12,14 @@ projectorData = []
 
 async function fetchProjectData() {
     try {
-        // Fetch the JSON data
         const response = await fetch('/playable/json/projects.json');
 
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
 
-        return await response.json();
+        return (await response.json()).filter((ele)=>{return ele.type != "job"});
+         
 
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
@@ -62,6 +62,7 @@ function heldLeftOrRight(direction) {
             projectorSelected += 1;
         }
     }
+    
     changeProjectorData();
 }
 
