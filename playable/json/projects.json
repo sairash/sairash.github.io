@@ -141,12 +141,12 @@
     },
     {
         "title": "View9",
-        "image": "https://view9.com.np/",
+        "image": "https://view9.com.np/assets/images/logo.svg",
         "small": "Search Engine in golang",
         "work": "Fullstack • UI Designer",
         "description": "View9 is an award-winning team of expert developers and designers who specialize in creating high-quality web, software, and mobile apps. With over 11 years of experience in the industry, they have developed a reputation as the top app development agency in Kathmandu.",
         "date": "2021 - 2023",
-        "link": "https://github.com/sairash/daledai",
+        "link": "https://view9.com.np/",
         "type": "job"
     }
 ]
