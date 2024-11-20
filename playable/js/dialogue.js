@@ -25,7 +25,7 @@ var dialogue = {
     },
     bacon:{
         img:'images/characters/bacon_head.png',
-        speech:['Hii Oink Oink!', 'I am bacon.. But You can call me yours ;)', 'I have a quest for you!', 'Go and get me the key from the Chest that is in Shroom Land!', '...', 'Oh Wow you did bring it.. Thank you!'],
+        speech:['Hii Oink Oink!', 'I am bacon.. But You can call me yours ;)', 'I have a quest for you!', 'Go and get me the key from the Chest that is at the right of the island!', '...', 'Oh Wow you did bring it.. Thank you!', 'Now you can go inside the projector room.'],
         intext: 0,
         quest:{
             4: {
@@ -78,6 +78,8 @@ function dialogueSystem() {
                     console.log("Quest is active")
                     postSpeaking = true;
                 }
+            	incomplete_div_visibiity(false)
+
                 speaking_sound(lastTalkedCharacter, 'play')
             }
             if(!dialogue[lastTalkedCharacter].finished){
