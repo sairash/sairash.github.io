@@ -52,7 +52,7 @@ function collisionChecker(direction) {
     function interactable_logic(type, event) {
        if(event == 'Enter'){
             if(type == 'changeAble'){
-                if(!changeAbleImageChanged){
+                if(!changeAbleImageChanged && !locked_chest){
                     document.getElementById(previousInteractableObjectId+'_image').src = document.getElementById(previousInteractableObjectId+'_image').src.replace('_close', '_open');
                     changeAbleImageChanged = true;
                     onDoor = true;
@@ -60,12 +60,17 @@ function collisionChecker(direction) {
                     positionToChangePlayer.y = document.getElementById(previousInteractableObjectId).getAttribute('position').split(",")[1];
                     event_sound("door_open")
                 }
+                if(locked_chest){
+                    notify.innerText = "Get the key first.."
+                }
             }
             if(type == 'npc'){
                 onNpc = true;
+                notify.innerText = "Press [Space] OR (A)"
             }
             if(type == 'storage'){
                 onStorage = true;
+                notify.innerText = "Press [Space] OR (A)"
             }
        }else{
             if(type == 'changeAble'){
