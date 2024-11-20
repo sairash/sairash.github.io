@@ -93,7 +93,7 @@ body{
     height: 100%;
     overflow: hidden;
     position: relative;
-    background: #61ddf7;
+    background: #07788F;
 }
 
 #world-map{
@@ -312,9 +312,12 @@ body{
     font-weight: bold;
 }
 #speakerDialogue{
-    background: #fff; 
+    background: #000;
+    color: #fff; 
     flex:1 1 0%;
     height: 100%;
+
+    padding: 10px;
     /* background-color: red; */
     font-size: calc(var(--text-size) - 8px);
     overflow: hidden;
@@ -379,14 +382,16 @@ body{
 }
 
 #notify{
-    color: white;
+    color: red;
     padding: calc(var(--tile) * 0.15);
     position: absolute;
     right: calc(var(--tile) * -5);
     top: calc(var(--tile) * .2);
-    font-size: calc(var(--text-size) - 8px);
+    font-size: calc(var(--text-size));
     font-weight: bold;
-    border: solid white calc(var(--tile) * 0.05);
+    border: solid red calc(var(--tile) * 0.05);
+
+    background-color: white;
 }
 
 
@@ -440,4 +445,19 @@ body{
 .musicPlayImage{
     width: calc(var(--pixel-size) * 10 );
     margin-top: calc(var(--pixel-size) * 2 );
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.95);
+    }
 }
