@@ -1,5 +1,15 @@
 [
     {
+        "title": "Aimssh",
+        "image": "https://aim.ftp.sh/_app/immutable/assets/demo-small-screen.CrNYbEIh.png",
+        "small": "A Terminal pomodoro application that you can SSH into.",
+        "work": "Golang • TUI",
+        "description": "Introducing a fresh take on productivity, a unique Pomodoro Timer app designed specifically for the terminal enthusiasts and tech-savvy professionals. This minimalist design keeps your focus on tasks without the clutter of traditional apps. Furthermore, the app offers the ability to SSH into it using a command ssh aim.ftp.sh, allowing you to manage your sessions remotely, whether you're on your local machine or from a server.",
+        "date": "2025",
+        "link": "https://pomo.ftp.sh/",
+        "type": "interested"
+    },
+    {
         "title": "Celeb Twin",
         "image": "https://akocdw82ai.ufs.sh/f/Jk6mQ2VBlE6toM0vSlyciU06w7xkslLhGM2DZ3vBazQFypuT",
         "small": "An app to check whch of the 10k celeberities you look alike.",
@@ -7,7 +17,7 @@
         "description": " This platform allows users to either upload or take a picture to instantly find out which of 10,000 celebrities they resemble the most. The entire process happens seamlessly within the user's browser, eliminating the need for a complex backend system while ensuring fast and efficient results. I achieved this by first extracting facial data from 20 images of each celebrity, storing these embeddings in a high-performance vector database. When a user uploads their photo, our app processes their facial data on the client side and, using WebAssembly (WASM), efficiently matches it against the stored dataset to find the closest lookalikes. Importantly, no data is ever collected or stored, ensuring complete privacy. Best of all, the service is entirely free to use!",
         "date": "2025",
         "link": "https://celebtwin.sairashgautam.com.np/",
-        "type": "interested"
+        "type": "project"
     },
     {
         "title": "Screeenpals",
