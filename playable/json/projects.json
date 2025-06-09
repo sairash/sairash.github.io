@@ -1,5 +1,15 @@
 [
     {
+        "title": "TikTask",
+        "image": "https://akocdw82ai.ufs.sh/f/Jk6mQ2VBlE6tYITCo0Lr5NPLfyHCAXTI0wcDOVaRt3j1qU7e",
+        "small": "Time, Task & Music",
+        "work": "React • Nextjs",
+        "description": "I crafted a unique space where focus meets fun, designed to help you master your time with ease. At its core, TikTask features a customizable Pomodoro timer—set your focus time, short breaks, and long breaks after every four cycles. What truly sets this apart is it's charming, animated stickers that bring your productivity to life: an idle GIF appears when paused, an active GIF motivates you during work, and a rest GIF soothes you during breaks. For seamless multitasking, there is picture-in-picture mode which lets you keep an eye on your timer while navigating other tasks. Enhance your concentration with diverse zen audio options, including soothing sounds like forest, river, rain, and cafe ambiances, or enjoy your favorite tunes with integrated YouTube player that supports full playlists. Plus, stay organized with a simple yet effective to-do list—add, delete, and mark tasks as complete, all within a beautiful and minimal user interface.",
+        "date": "2025",
+        "link": "https://tasktik.vercel.app/",
+        "type": "interested"
+    },
+    {
         "title": "Notepeer",
         "image": "https://akocdw82ai.ufs.sh/f/Jk6mQ2VBlE6tgd31JT7vjFl4rXYBLVJWMauU5hodzKTCAfsO",
         "small": "Notepad++ we deserved right on web with decentralized sharing.",
@@ -7,7 +17,7 @@
         "description": "A modern, serverless note editor built with Vue. Notes are shared peer-to-peer like torrents (so anyone who has a note becomes a peer and can share it further, with no central server involved). It features a clean writing experience with Zen Mode (ambient sounds like forest, rain, café, etc.) to help you focus. Notes can be exported as .md or .txt, and the entire app is private, open and free to use.",
         "date": "2025",
         "link": "https://notepeer.github.io/",
-        "type": "interested"
+        "type": "project"
     },{
         "title": "Aimssh",
         "image": "https://aim.ftp.sh/_app/immutable/assets/demo-small-screen.CrNYbEIh.png",
@@ -23,7 +33,7 @@
         "image": "https://akocdw82ai.ufs.sh/f/Jk6mQ2VBlE6toM0vSlyciU06w7xkslLhGM2DZ3vBazQFypuT",
         "small": "An app to check whch of the 10k celeberities you look alike.",
         "work": "WASM",
-        "description": " This platform allows users to either upload or take a picture to instantly find out which of 10,000 celebrities they resemble the most. The entire process happens seamlessly within the user's browser, eliminating the need for a complex backend system while ensuring fast and efficient results. I achieved this by first extracting facial data from 20 images of each celebrity, storing these embeddings in a high-performance vector database. When a user uploads their photo, our app processes their facial data on the client side and, using WebAssembly (WASM), efficiently matches it against the stored dataset to find the closest lookalikes. Importantly, no data is ever collected or stored, ensuring complete privacy. Best of all, the service is entirely free to use!",
+        "description": " This platform allows users to either upload or take a picture to instantly find out which of 10,000 celebrities they resemble the most. The entire process happens seamlessly within the user's browser, eliminating the need for a complex backend system while ensuring fast and efficient results. I achieved this by first extracting facial data from 20 images of each celebrity, storing these embeddings in a high-performance vector database. When a user uploads their photo, the app processes their facial data on the client side and, using WebAssembly (WASM), efficiently matches it against the stored dataset to find the closest lookalikes. Importantly, no data is ever collected or stored, ensuring complete privacy. Best of all, the service is entirely free to use!",
         "date": "2025",
         "link": "https://celebtwin.sairashgautam.com.np/",
         "type": "project"
