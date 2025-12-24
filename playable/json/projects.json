@@ -1,5 +1,15 @@
 [
     {
+        "title": "Bolam",
+        "image": "https://akocdw82ai.ufs.sh/f/Jk6mQ2VBlE6tr4n9EEdXJwOy7Z6pcIaS9AHD0PsuW1Yd3itl",
+        "small": "Torrent, Chat & Decentralized",
+        "work": "React",
+        "description": "Bolam is a decentralized peer-to-peer chat app that lets you connect directly with others without relying on central servers or storing any data. What Bolam Can Do?You can join channels to chat with people worldwide or enable location access to discover and talk with users nearby.All data, including your location, stays only in your browser, ensuring privacy.Built on torrent technology, Bolam bypasses censorship while giving you full control to easily add or remove trackers, making your conversations private, resilient, and truly yours.Upload and share files",
+        "date": "2025",
+        "link": "https://v2.bolamnepal.com/",
+        "type": "interested"
+    },
+    {
         "title": "TikTask",
         "image": "https://akocdw82ai.ufs.sh/f/Jk6mQ2VBlE6tYITCo0Lr5NPLfyHCAXTI0wcDOVaRt3j1qU7e",
         "small": "Time, Task & Music",
@@ -7,7 +17,7 @@
         "description": "I crafted a unique space where focus meets fun, designed to help you master your time with ease. At its core, TikTask features a customizable Pomodoro timer—set your focus time, short breaks, and long breaks after every four cycles. What truly sets this apart is it's charming, animated stickers that bring your productivity to life: an idle GIF appears when paused, an active GIF motivates you during work, and a rest GIF soothes you during breaks. For seamless multitasking, there is picture-in-picture mode which lets you keep an eye on your timer while navigating other tasks. Enhance your concentration with diverse zen audio options, including soothing sounds like forest, river, rain, and cafe ambiances, or enjoy your favorite tunes with integrated YouTube player that supports full playlists. Plus, stay organized with a simple yet effective to-do list—add, delete, and mark tasks as complete, all within a beautiful and minimal user interface.",
         "date": "2025",
         "link": "https://tasktik.vercel.app/",
-        "type": "interested"
+        "type": "project"
     },
     {
         "title": "Notepeer",
